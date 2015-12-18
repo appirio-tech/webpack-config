@@ -1,0 +1,9 @@
+# Build files
+.tmp
+bower_components
+node_modules
+coverage
+.sass-cache
+.idea
+.env
+npm-debug.log

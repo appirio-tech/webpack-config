@@ -1,0 +1,6 @@
+require 'zepto/zepto.min'
+require 'angular'
+require './scripts/home'
+require './views/home'
+require './styles/home'
+require './images/project-custom.svg'
