@@ -12,8 +12,8 @@
     "build": "webpack --config webpack.config.js; cp example/index.html dist/"
   },
   "dependencies": {
-    "appirio-styles": "0.x.x",
     "angular-mocks": "^1.4.8",
+    "appirio-styles": "0.x.x",
     "appirio-tech-api-schemas": "^5.0.58",
     "bourbon": "^4.2.6",
     "coffee-loader": "0.x.x",
