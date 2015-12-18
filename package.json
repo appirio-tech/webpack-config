@@ -1,6 +1,6 @@
 {
   "name": "appirio-tech-webpack-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./webpack.config.coffee",
   "devDependencies": {
     "angular": "^1.4.x",
@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "appirio-styles": "0.x.x",
-    "appirio-tech-api-schemas": "5.x.x",
+    "angular-mocks": "^1.4.8",
+    "appirio-tech-api-schemas": "^5.0.58",
     "bourbon": "^4.2.6",
     "coffee-loader": "0.x.x",
     "coffee-script": "1.x.x",
@@ -24,8 +25,8 @@
     "jade": "^1.11.0",
     "jade-html-loader": "0.0.3",
     "jade-loader": "^0.8.0",
+    "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
-    "portfinder": "^0.4.0",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
