@@ -23,7 +23,18 @@ module.exports = (__dirname) ->
 
   config.resolve =
     modulesDirectories: ['node_modules']
-    extensions: ['', '.js', '.json', '.coffee', '.jade', '.scss']
+    extensions: [
+      ''
+      '.js'
+      '.json'
+      '.coffee'
+      '.jade'
+      '.scss'
+      '.svg'
+      '.png'
+      '.gif'
+      '.jpg'
+    ]
 
   config.sassLoader =
     includePaths: [
