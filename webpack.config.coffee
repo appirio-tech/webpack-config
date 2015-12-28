@@ -8,7 +8,7 @@ module.exports = (__dirname) ->
   config.entry =
     src    : path.join(__dirname, '/src/src.coffee')
     example: [
-      "webpack-dev-server/client?http://localhost:8080"
+      'webpack-dev-server/client?http://localhost:8080'
       path.join(__dirname, '/example/example.coffee')
     ]
 
@@ -34,6 +34,7 @@ module.exports = (__dirname) ->
       '.png'
       '.gif'
       '.jpg'
+      '.cjsx'
     ]
 
   config.sassLoader =
@@ -51,10 +52,13 @@ module.exports = (__dirname) ->
       loader: 'raw'
     ,
       test: /\.coffee$/
-      loader: "coffee"
+      loader: 'coffee'
+    ,
+      test: /\.cjsx$/
+      loaders: ['coffee', 'cjsx']
     ,
       test: /\.(coffee\.md|litcoffee)$/
-      loader: "coffee?literate"
+      loader: 'coffee?literate'
     ,
       test: /\.json$/
       loader: 'json'
