@@ -1,6 +1,6 @@
 React    = require 'react'
 ReactDOM = require 'react-dom'
-template = require './../../views/hello.jader'
+template = require './hello.element.jader'
 
 element =
   render: ->
