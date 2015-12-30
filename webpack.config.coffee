@@ -159,6 +159,7 @@ module.exports = (options) ->
       '.json'
       '.coffee'
       '.jade'
+      '.jader'
       '.scss'
       '.svg'
       '.png'
