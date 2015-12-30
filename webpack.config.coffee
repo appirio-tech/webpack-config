@@ -1,5 +1,6 @@
 module.exports = (options) ->
   path              = require 'path'
+  webpack           = require 'webpack'
   ExtractTextPlugin = require 'extract-text-webpack-plugin'
   HtmlWebpackPlugin = require 'html-webpack-plugin'
 
@@ -10,16 +11,16 @@ module.exports = (options) ->
   # Default flags for build
   BUILD = false
   TEST  = false
-  ENV   = 'mock'
+  ENV   = process.env.ENV || 'mock'
 
   # Pull flags from command line arguments
   process.argv.forEach (arg) ->
-    TEST = true  if arg == '--test'
-    BUILD = true if arg == '--build'
+    TEST = true    if arg == '--test'
+    BUILD = true   if arg == '--build'
 
-    ENV = 'dev'  if arg == '--dev'
-    ENV = 'qa'   if arg == '--qa'
-    ENV = 'prod' if arg == '--prod'
+    ENV = 'dev'    if arg == '--dev'
+    ENV = 'qa'     if arg == '--qa'
+    ENV = 'master' if arg == '--master'
 
   # Set environment variables to be injected into the app by envify
   if ENV == 'dev'
@@ -36,7 +37,7 @@ module.exports = (options) ->
       AUTH0_CLIENT_ID : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
       AUTH0_DOMAIN    : 'topcoder-qa.auth0.com'
 
-  if ENV == 'prod'
+  if ENV == 'master'
     envConstants =
       API_URL      : 'https://api-work.topcoder.com'
       AUTH0_DOMAIN : 'topcoder.auth0.com'
@@ -105,10 +106,9 @@ module.exports = (options) ->
       # Transpile .js files using babel-loader
       # Compiles ES6 and ES7 into ES5 code
       test: /\.js$/
-      loader: 'babel-loader'
+      loaders: [ 'babel' ]
       exclude: /node_modules\/(?!appirio-tech.*)/
-      query:
-        presets: [ 'es2015' ]
+      include: dirname
     ,
       test: /\.jade$/
       loader: 'jade-loader?self'
