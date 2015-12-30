@@ -109,6 +109,9 @@ module.exports = (options) ->
       test: /\.jade$/
       loader: 'jade-loader?self'
     ,
+      test: /\.jader$/
+      loader: 'jade-react'
+    ,
       test: /\.html$/
       loader: 'raw'
     ,
