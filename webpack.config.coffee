@@ -9,8 +9,8 @@ module.exports = (options) ->
 
   # Default flags for build
   BUILD = false
-  TEST = false
-  ENV = 'mock'
+  TEST  = false
+  ENV   = 'mock'
 
   # Pull flags from command line arguments
   process.argv.forEach (arg) ->
@@ -23,29 +23,31 @@ module.exports = (options) ->
 
   # Set environment variables to be injected into the app by envify
   if ENV == 'dev'
-    Object.assign process.env,
+    envConstants =
       API_URL                 : 'https://api-work.topcoder-dev.com'
       AUTH0_CLIENT_ID         : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
       AUTH0_DOMAIN            : 'topcoder-dev.auth0.com'
       NEWRELIC_APPLICATION_ID : '7374849'
       NEWRELIC_LICENSE_KEY    : '496af5ee90'
- 
+
   if ENV == 'qa'
-    Object.assign process.env,
+    envConstants =
       API_URL         : 'https://api-work.topcoder-qa.com'
       AUTH0_CLIENT_ID : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
       AUTH0_DOMAIN    : 'topcoder-qa.auth0.com'
 
   if ENV == 'prod'
-    Object.assign process.env,
+    envConstants =
       API_URL      : 'https://api-work.topcoder.com'
       AUTH0_DOMAIN : 'topcoder.auth0.com'
+
+  Object.assign process.env, envConstants if envConstants
 
   # Config
   # Reference: http://webpack.github.io/docs/configuration.html
   # This is the object where all configuration gets set
 
-  config = {}
+  config         = {}
   config.context = dirname
 
   # Entry
@@ -57,11 +59,13 @@ module.exports = (options) ->
   if entry
     config.entry = entry
   else
+    srcPath      = path.join dirname, '/src/src.coffee'
+    examplePath  = path.join dirname, '/example/example.coffee'
     config.entry =
-      src    : path.join(__dirname, '/src/src.coffee')
+      src    : srcPath
       example: [
         'webpack-dev-server/client?http://localhost:8080'
-        path.join(__dirname, '/example/example.coffee')
+        examplePath
       ]
 
   # Output
@@ -138,7 +142,7 @@ module.exports = (options) ->
       # Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
       # Rename the file using the asset hash
       # Pass along the updated reference to your code
-      # You can add here any file extension you want to get copied to your output    
+      # You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/
       loader: 'file'
     ]
