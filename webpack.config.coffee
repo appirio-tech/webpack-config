@@ -3,6 +3,7 @@ module.exports = (options) ->
   webpack           = require 'webpack'
   ExtractTextPlugin = require 'extract-text-webpack-plugin'
   HtmlWebpackPlugin = require 'html-webpack-plugin'
+  CompressionPlugin = require 'compression-webpack-plugin'
 
   { dirname, entry, template } = options
 
@@ -181,7 +182,14 @@ module.exports = (options) ->
   # Reference: http://webpack.github.io/docs/configuration.html#plugins
   # List: http://webpack.github.io/docs/list-of-plugins.html
 
-  config.plugins = []
+  config.plugins = [
+    new CompressionPlugin
+      asset: "{file}.gz",
+      algorithm: "gzip",
+      regExp: /\.js$|\.css$/,
+      threshold: 10240,
+      minRatio: 0.8
+  ]
 
   if !TEST
     config.plugins.push new ExtractTextPlugin '[name].css'
@@ -201,6 +209,8 @@ module.exports = (options) ->
 
     # Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
     # Minify all javascript, switch loaders to minimizing mode
-    config.plugins.push new webpack.optimize.UglifyJsPlugin()
+    config.plugins.push new webpack.optimize.UglifyJsPlugin
+      sourceMap: false
+      mangle: false
 
   config
