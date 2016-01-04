@@ -106,9 +106,11 @@ module.exports = (options) ->
       # Transpile .js files using babel-loader
       # Compiles ES6 and ES7 into ES5 code
       test: /\.js$/
-      loaders: [ 'babel' ]
+      loader: 'babel'
       exclude: /node_modules\/(?!appirio-tech.*)/
       include: dirname
+      query:
+        presets: ['es2015', 'react']
     ,
       test: /\.jade$/
       loader: 'jade-loader?self'
