@@ -126,10 +126,10 @@ module.exports = (options) ->
       loader: 'coffee'
     ,
       test: /\.cjsx$/
-      loaders: ['coffee', 'cjsx']
+      loader: 'babel?presets[]=react,presets[]=es2015!coffee!cjsx'
     ,
       test: /\.(coffee\.md|litcoffee)$/
-      loader: 'coffee?literate'
+      loader: 'babel?presets[]=react,presets[]=es2015!!coffee?literate'
     ,
       test: /\.json$/
       loader: 'json'
@@ -182,14 +182,7 @@ module.exports = (options) ->
   # Reference: http://webpack.github.io/docs/configuration.html#plugins
   # List: http://webpack.github.io/docs/list-of-plugins.html
 
-  config.plugins = [
-    new CompressionPlugin
-      asset: "{file}.gz",
-      algorithm: "gzip",
-      regExp: /\.js$|\.css$/,
-      threshold: 10240,
-      minRatio: 0.8
-  ]
+  config.plugins = []
 
   if !TEST
     config.plugins.push new ExtractTextPlugin '[name].css'
@@ -212,5 +205,12 @@ module.exports = (options) ->
     config.plugins.push new webpack.optimize.UglifyJsPlugin
       sourceMap: false
       mangle: false
+
+    config.plugins.push new CompressionPlugin
+      asset: "{file}.gz",
+      algorithm: "gzip",
+      regExp: /\.js$|\.css$/,
+      threshold: 10240,
+      minRatio: 0.8
 
   config
