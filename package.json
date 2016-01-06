@@ -1,6 +1,6 @@
 {
   "name": "appirio-tech-webpack-config",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "main": "./webpack.config.coffee",
   "devDependencies": {
     "angular": "^1.4.x",
