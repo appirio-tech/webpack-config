@@ -109,9 +109,9 @@ module.exports = (options) ->
       test: /\.js$/
       loader: 'babel'
       exclude: /node_modules\/(?!appirio-tech.*)/
-      include: dirname
+      include: path.join dirname, '..'
       query:
-        presets: ['es2015', 'react']
+        presets: [ 'es2015', 'react' ]
     ,
       test: /\.jade$/
       loader: 'jade-loader?self'
@@ -148,7 +148,11 @@ module.exports = (options) ->
       loader: 'transform/cacheable?envify'
     ]
 
+  config.resolveLoader =
+    root: path.join dirname, '/node_modules/'
+
   config.resolve =
+    root: path.join dirname, '/node_modules/'
     modulesDirectories: ['node_modules']
     extensions: [
       ''
