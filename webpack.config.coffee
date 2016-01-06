@@ -113,10 +113,13 @@ module.exports = (options) ->
       query:
         presets: [ 'es2015', 'react' ]
     ,
-      test: /\.jade$/
+      test: /^(?!.*\.react\.jade$)(.*\.jade$)/
       loader: 'jade-loader?self'
     ,
-      test: /\.jader$/
+      test: /\.react\.jade$/
+      loader: 'jade-react'
+    ,
+      test: /\.react\.jader$/
       loader: 'jade-react'
     ,
       test: /\.html$/
