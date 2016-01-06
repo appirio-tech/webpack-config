@@ -119,7 +119,7 @@ module.exports = (options) ->
       test: /\.react\.jade$/
       loader: 'jade-react'
     ,
-      test: /\.react\.jader$/
+      test: /\.jader$/
       loader: 'jade-react'
     ,
       test: /\.html$/
