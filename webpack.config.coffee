@@ -122,14 +122,8 @@ module.exports = (options) ->
       test: /\.html$/
       loader: 'raw'
     ,
-      test: /\.coffee$/
-      loader: 'coffee'
-    ,
-      test: /\.cjsx$/
-      loader: 'babel?presets[]=react,presets[]=es2015!coffee!cjsx'
-    ,
-      test: /\.(coffee\.md|litcoffee)$/
-      loader: 'babel?presets[]=react,presets[]=es2015!!coffee?literate'
+      test: /\.coffee|litcoffee|cjsx$/
+      loader: 'babel?presets[]=react,presets[]=es2015!coffee?literate!cjsx'
     ,
       test: /\.json$/
       loader: 'json'
@@ -150,8 +144,8 @@ module.exports = (options) ->
       loader: 'file'
     ]
     postLoaders: [
-      test: /\.js|\.coffee$/
-      loader: 'transform?envify'
+      test: /\.js|\.coffee|\.cjsx$/
+      loader: 'transform/cacheable?envify'
     ]
 
   config.resolve =
@@ -185,7 +179,7 @@ module.exports = (options) ->
   config.plugins = []
 
   if !TEST
-    config.plugins.push new ExtractTextPlugin '[name].css'
+    config.plugins.push new ExtractTextPlugin '[name].[hash].css'
 
     config.plugins.push new HtmlWebpackPlugin
       template: template || './example/index.html'
