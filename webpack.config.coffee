@@ -123,7 +123,7 @@ module.exports = (options) ->
       loader: 'raw'
     ,
       test: /\.coffee|litcoffee|cjsx$/
-      loader: 'babel?presets[]=react,presets[]=es2015!coffee?literate!cjsx'
+      loader: 'babel?presets[]=react,presets[]=es2015!coffee!cjsx'
     ,
       test: /\.json$/
       loader: 'json'
