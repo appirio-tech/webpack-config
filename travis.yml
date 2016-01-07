@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-- 5.2.0
-install:
-- npm install
-script:
-- webpack
-sudo: false
