@@ -108,6 +108,13 @@ module.exports = (options) ->
       # Compiles ES6 and ES7 into ES5 code
       test: /\.js$/
       loader: 'babel'
+      exclude: /node_modules\/(?!appirio-tech.*)/
+      include: path.join dirname, '..'
+      query:
+        presets: [ 'es2015', 'react' ]
+    ,
+      test: /input\-moment/
+      loader: 'babel'
       query:
         presets: [ 'es2015', 'react' ]
     ,
