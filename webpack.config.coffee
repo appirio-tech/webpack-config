@@ -209,7 +209,6 @@ module.exports = (options) ->
     # Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
     # Minify all javascript, switch loaders to minimizing mode
     config.plugins.push new webpack.optimize.UglifyJsPlugin
-      sourceMap: false
       mangle: false
 
     config.plugins.push new CompressionPlugin
