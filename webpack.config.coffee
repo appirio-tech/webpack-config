@@ -40,8 +40,9 @@ module.exports = (options) ->
 
   if ENV == 'master'
     envConstants =
-      API_URL      : 'https://api-work.topcoder.com'
-      AUTH0_DOMAIN : 'topcoder.auth0.com'
+      API_URL         : 'https://api-work.topcoder.com'
+      AUTH0_CLIENT_ID : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
+      AUTH0_DOMAIN    : 'topcoder.auth0.com'
 
   Object.assign process.env, envConstants if envConstants
 
