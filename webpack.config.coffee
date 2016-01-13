@@ -12,19 +12,21 @@ module.exports = (options) ->
   # Default flags for build
   BUILD = false
   TEST  = false
-  ENV   = process.env.ENV || 'mock'
+  ENV   = process.env.ENV || 'MOCK'
 
   # Pull flags from command line arguments
   process.argv.forEach (arg) ->
     TEST = true    if arg == '--test'
     BUILD = true   if arg == '--build'
 
-    ENV = 'dev'    if arg == '--dev'
-    ENV = 'qa'     if arg == '--qa'
-    ENV = 'master' if arg == '--master'
+    ENV = 'DEV'    if arg == '--dev'
+    ENV = 'QA'     if arg == '--qa'
+    ENV = 'PROD'   if arg == '--prod'
+
+  process.env.ENV = ENV
 
   # Set environment variables to be injected into the app by envify
-  if ENV == 'dev'
+  if ENV == 'DEV'
     envConstants =
       API_URL                 : 'https://api-work.topcoder-dev.com'
       AUTH0_CLIENT_ID         : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
@@ -32,13 +34,13 @@ module.exports = (options) ->
       NEWRELIC_APPLICATION_ID : '7374849'
       NEWRELIC_LICENSE_KEY    : '496af5ee90'
 
-  if ENV == 'qa'
+  if ENV == 'QA'
     envConstants =
       API_URL         : 'https://api-work.topcoder-qa.com'
       AUTH0_CLIENT_ID : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
       AUTH0_DOMAIN    : 'topcoder-qa.auth0.com'
 
-  if ENV == 'master'
+  if ENV == 'PROD'
     envConstants =
       API_URL         : 'https://api-work.topcoder.com'
       AUTH0_CLIENT_ID : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
