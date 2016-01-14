@@ -14,7 +14,11 @@ module.exports = (options) ->
   TEST  = false
   ENV   = process.env.ENV || 'MOCK'
 
+  usePort    = 8080
+  portIsNext = false
+
   # Pull flags from command line arguments
+
   process.argv.forEach (arg) ->
     TEST = true    if arg == '--test'
     BUILD = true   if arg == '--build'
@@ -22,6 +26,13 @@ module.exports = (options) ->
     ENV = 'DEV'    if arg == '--dev'
     ENV = 'QA'     if arg == '--qa'
     ENV = 'PROD'   if arg == '--prod'
+
+    if portIsNext
+      usePort    = arg
+      portIsNext = false
+
+    portIsNext = true if arg == '--port'
+
 
   process.env.ENV = ENV
 
@@ -69,7 +80,7 @@ module.exports = (options) ->
     config.entry =
       src    : srcPath
       example: [
-        'webpack-dev-server/client?http://localhost:8080'
+        "webpack-dev-server/client?http://localhost:#{usePort}"
         examplePath
       ]
 
