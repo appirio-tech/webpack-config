@@ -37,8 +37,16 @@ module.exports = (options) ->
   process.env.ENV = ENV
 
   # Set environment variables to be injected into the app by envify
+  envConstants =
+    AUTH0_TOKEN_NAME         : 'userJWTToken'
+    AUTH0_REFRESH_TOKEN_NAME : 'userRefreshJWTToken'
+
+  if ENV == 'MOCK'
+    Object.assign envConstants,
+      API_URL : 'https://api.topcoder.com'
+
   if ENV == 'DEV'
-    envConstants =
+    Object.assign envConstants,
       API_URL                 : 'https://api-work.topcoder-dev.com'
       AUTH0_CLIENT_ID         : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
       AUTH0_DOMAIN            : 'topcoder-dev.auth0.com'
@@ -46,18 +54,22 @@ module.exports = (options) ->
       NEWRELIC_LICENSE_KEY    : '496af5ee90'
 
   if ENV == 'QA'
-    envConstants =
+    Object.assign envConstants,
       API_URL         : 'https://api-work.topcoder-qa.com'
       AUTH0_CLIENT_ID : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
       AUTH0_DOMAIN    : 'topcoder-qa.auth0.com'
 
   if ENV == 'PROD'
-    envConstants =
+    Object.assign envConstants,
       API_URL         : 'https://api-work.topcoder.com'
       AUTH0_CLIENT_ID : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
       AUTH0_DOMAIN    : 'topcoder.auth0.com'
 
-  Object.assign process.env, envConstants if envConstants
+  console.log 'assigning constants to process.env:'
+  console.log envConstants
+  console.log '\n\n'
+
+  Object.assign process.env, envConstants
 
   # Config
   # Reference: http://webpack.github.io/docs/configuration.html
@@ -75,14 +87,7 @@ module.exports = (options) ->
   if entry
     config.entry = entry
   else
-    srcPath      = path.join dirname, '/src/src.coffee'
-    examplePath  = path.join dirname, '/example/example.coffee'
-    config.entry =
-      src    : srcPath
-      example: [
-        "webpack-dev-server/client?http://localhost:#{usePort}"
-        examplePath
-      ]
+    config.entry = path.join dirname, '/example/example.coffee'
 
   # Output
   # Reference: http://webpack.github.io/docs/configuration.html#output
