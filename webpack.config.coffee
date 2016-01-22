@@ -41,6 +41,12 @@ module.exports = (options) ->
     AUTH0_TOKEN_NAME         : 'userJWTToken'
     AUTH0_REFRESH_TOKEN_NAME : 'userRefreshJWTToken'
 
+  process.argv.forEach (arg) ->
+    argPair = arg.split '='
+
+    if argPair[0] == '--token'
+      envConstants.TOKEN = argPair[1]
+
   if ENV == 'MOCK'
     Object.assign envConstants,
       API_URL : 'https://api.topcoder.com'
