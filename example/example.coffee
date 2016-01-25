@@ -1,3 +1,4 @@
+require '../src/src'
 require './scripts/example.module'
 require './scripts/home'
 require './views/home'
