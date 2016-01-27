@@ -4,10 +4,11 @@
   "main": "./webpack.config.coffee",
   "devDependencies": {
     "angular": "^1.4.x",
-    "zepto": "0.0.4",
+    "font-awesome": "^4.5.0",
+    "npm-prepublish": "^1.2.1",
     "react": "0.14.x",
     "react-dom": "0.14.x",
-    "npm-prepublish": "^1.2.1"
+    "zepto": "0.0.4"
   },
   "scripts": {
     "dev": "webpack-dev-server -d --colors",
