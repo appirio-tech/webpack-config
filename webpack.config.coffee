@@ -173,7 +173,13 @@ module.exports = (options) ->
       # Rename the file using the asset hash
       # Pass along the updated reference to your code
       # You can add here any file extension you want to get copied to your output
-      test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/
+      test: /\.(png|jpg|jpeg|gif)$/
+      loader: 'file'
+    ,
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/
+      loader: 'file'
+    ,
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/
       loader: 'file'
     ]
     postLoaders: [
