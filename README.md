@@ -1,3 +1,7 @@
 # webpack-config
 
-Yo, fill me out.
+## Development
+```shell
+npm install
+npm run dev
+```
