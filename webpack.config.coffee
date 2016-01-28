@@ -4,6 +4,8 @@ module.exports = (options) ->
   ExtractTextPlugin = require 'extract-text-webpack-plugin'
   HtmlWebpackPlugin = require 'html-webpack-plugin'
   CompressionPlugin = require 'compression-webpack-plugin'
+  connectConstants  = require './connect-constants'
+  tcConstants       = require './tc-constants'
 
   { dirname, entry, template } = options
 
@@ -13,15 +15,16 @@ module.exports = (options) ->
   BUILD = false
   TEST  = false
   ENV   = process.env.ENV || 'MOCK'
+  SITE  = 'CONNECT'
 
   usePort    = 8080
   portIsNext = false
 
   # Pull flags from command line arguments
-
   process.argv.forEach (arg) ->
-    TEST = true    if arg == '--test'
+    TEST  = true   if arg == '--test'
     BUILD = true   if arg == '--build'
+    SITE  = 'TC'   if arg == '--tc'
 
     ENV = 'DEV'    if arg == '--dev'
     ENV = 'QA'     if arg == '--qa'
@@ -33,47 +36,14 @@ module.exports = (options) ->
 
     portIsNext = true if arg == '--port'
 
-
-  process.env.ENV = ENV
-
-  # Set environment variables to be injected into the app by envify
-  envConstants =
-    AUTH0_TOKEN_NAME         : 'userJWTToken'
-    AUTH0_REFRESH_TOKEN_NAME : 'userRefreshJWTToken'
-
-  process.argv.forEach (arg) ->
-    argPair = arg.split '='
-
-    if argPair[0] == '--token'
-      envConstants.TOKEN = argPair[1]
-
-  if ENV == 'MOCK'
-    Object.assign envConstants,
-      API_URL : 'https://api.topcoder.com'
-
-  if ENV == 'DEV'
-    Object.assign envConstants,
-      API_URL                 : 'https://api-work.topcoder-dev.com'
-      AUTH0_CLIENT_ID         : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
-      AUTH0_DOMAIN            : 'topcoder-dev.auth0.com'
-      NEWRELIC_APPLICATION_ID : '7374849'
-      NEWRELIC_LICENSE_KEY    : '496af5ee90'
-
-  if ENV == 'QA'
-    Object.assign envConstants,
-      API_URL         : 'https://api-work.topcoder-qa.com'
-      AUTH0_CLIENT_ID : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
-      AUTH0_DOMAIN    : 'topcoder-qa.auth0.com'
-
-  if ENV == 'PROD'
-    Object.assign envConstants,
-      API_URL         : 'https://api-work.topcoder.com'
-      AUTH0_CLIENT_ID : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
-      AUTH0_DOMAIN    : 'topcoder.auth0.com'
+  if SITE == 'CONNECT'
+    envConstants = connectConstants(ENV)
+  else if SITE == 'TC'
+    envConstants = tcConstants(ENV)
 
   console.log 'assigning constants to process.env:'
   console.log envConstants
-  console.log '\n\n'
+  console.log '\n'
 
   Object.assign process.env, envConstants
 
