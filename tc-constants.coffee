@@ -1,31 +1,5 @@
 configEnvConstants = (ENV) ->
-  constants =
-    NEW_CHALLENGES_URL    : 'https://www.topcoder.com/challenges/develop/upcoming/'
-    SWIFT_PROGRAM_ID      : 3445
-    UPCOMING_SRMS_URL     : 'https://www.topcoder.com/challenges/data/upcoming/'
-
-    EVENT_PROFILE_UPDATED : 'profile_updated'
-    EVENT_USER_LOGGED_IN  : 'user_logged_in'
-    EVENT_USER_LOGGED_OUT : 'user_logged_out'
-
-    STATE_ERROR           : 'error'
-    STATE_LOADING         : 'loading'
-    STATE_READY           : 'ready'
-
-    BUSY_PROGRESS_MESSAGE : 'Processing..'
-
-    # SRM phases
-    REGISTRATION: 'REGISTRATION'
-    CODING: 'CODING'
-
-    # Users' status
-    REGISTERED: 'REGISTERED'
-
-    # Submission type
-    SUBMISSION_TYPE_CONTEST: 'Contest Submission'
-
-    # Statuses for different objects
-    STATUS_ACTIVE: 'Active'
+  constants = {}
 
   if ENV == 'DEV'
     Object.assign constants,
