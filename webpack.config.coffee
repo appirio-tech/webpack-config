@@ -122,9 +122,6 @@ module.exports = (options) ->
       test: /\.jader$/
       loader: 'jade-react'
     ,
-      test: /\.html$/
-      loader: 'raw'
-    ,
       test: /\.coffee|litcoffee|cjsx$/
       loader: 'babel?presets[]=react,presets[]=es2015!coffee!cjsx'
     ,
