@@ -36,6 +36,7 @@ configEnvConstants = (ENV) ->
       AUTH0_CLIENT_ID : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
       AUTH0_DOMAIN    : 'topcoder.auth0.com'
       ENV             : 'PROD'
+      NODE_ENV        : 'production'
 
   constants
 
