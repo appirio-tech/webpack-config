@@ -114,16 +114,13 @@ module.exports = (options) ->
         presets: [ 'es2015', 'react' ]
     ,
       test: /^(?!.*\.react\.jade$)(.*\.jade$)/
-      loader: 'jade-loader?self'
+      loader: 'jade'
     ,
       test: /\.react\.jade$/
       loader: 'jade-react'
     ,
       test: /\.jader$/
       loader: 'jade-react'
-    ,
-      test: /\.html$/
-      loader: 'raw'
     ,
       test: /\.coffee|litcoffee|cjsx$/
       loader: 'babel?presets[]=react,presets[]=es2015!coffee!cjsx'
@@ -197,6 +194,8 @@ module.exports = (options) ->
     config.plugins.push new HtmlWebpackPlugin
       template: template || './example/index.html'
       inject: 'body'
+      favicon: options.favicon
+      NEW_RELIC_APPLICATION_ID: process.env.NEW_RELIC_APPLICATION_ID
 
   if BUILD
     # Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
