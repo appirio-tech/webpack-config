@@ -80,7 +80,7 @@ module.exports = (options) ->
       path          : path.join(dirname, '/dist')
       filename      : '[name].[hash].js'
       chunkFilename : '[name].[hash].js'
-      publicPath    : 'https://s3.amazonaws.com/app.topcoder-dev.com/'
+      # publicPath    : 'https://s3.amazonaws.com/app.topcoder-dev.com/'
 
   # Devtool
   # Reference: http://webpack.github.io/docs/configuration.html#devtool
@@ -133,7 +133,7 @@ module.exports = (options) ->
       loader: 'json'
     ,
       test: /\.scss$/
-      loader: ExtractTextPlugin.extract 'style-loader', 'css-loader!resolve-url!sass-loader?sourceMap'
+      loader: ExtractTextPlugin.extract 'style-loader', 'css-loader!sass-loader'
     ,
       test: /\.css$/
       loader: ExtractTextPlugin.extract 'style-loader', 'css-loader'
