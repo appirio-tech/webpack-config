@@ -5,6 +5,7 @@ configEnvConstants = (ENV) ->
     Object.assign constants,
       API_URL       : 'https://api.topcoder-dev.com/v3'
       API_URL_V2    : 'https://api.topcoder-dev.com/v2'
+      ASSET_PREFIX  : 'https://s3.amazonaws.com/app.topcoder-dev.com/'
       AUTH_API_URL  : 'https://api.topcoder-dev.com/v3'
       auth0Callback : 'https://api.topcoder-dev.com/pub/callback.html'
       auth0Domain   : 'topcoder-dev.auth0.com'
@@ -26,6 +27,7 @@ configEnvConstants = (ENV) ->
     Object.assign constants,
     API_URL       : 'https://api.topcoder-qa.com/v3.0.0'
     API_URL_V2    : 'https://api.topcoder-qa.com/v2'
+    ASSET_PREFIX  : 'https://s3.amazonaws.com/app.topcoder-qa.com/'
     AUTH_API_URL  : 'https://api.topcoder-qa.com/v3'
     auth0Callback : 'https://api.topcoder-qa.com/pub/callback.html'
     auth0Domain   : 'topcoder-qa.auth0.com'
@@ -46,6 +48,7 @@ configEnvConstants = (ENV) ->
     Object.assign constants,
     API_URL       : 'https://api.topcoder.com/v3.0.0'
     API_URL_V2    : 'https://api.topcoder.com/v2'
+    ASSET_PREFIX  : 'https://s3.amazonaws.com/app.topcoder.com/'
     AUTH_API_URL  : 'https://api.topcoder.com/v3'
     auth0Callback : 'https://api.topcoder.com/pub/callback.html'
     auth0Domain   : 'topcoder.auth0.com'
