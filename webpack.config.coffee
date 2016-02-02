@@ -133,7 +133,7 @@ module.exports = (options) ->
       loader: 'json'
     ,
       test: /\.scss$/
-      loader: ExtractTextPlugin.extract 'style-loader', 'css-loader!sass-loader'
+      loader: ExtractTextPlugin.extract 'style-loader', 'css-loader!resolve-url!sass-loader?sourceMap'
     ,
       test: /\.css$/
       loader: ExtractTextPlugin.extract 'style-loader', 'css-loader'
