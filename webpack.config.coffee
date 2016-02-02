@@ -211,7 +211,7 @@ module.exports = (options) ->
     config.plugins.push new webpack.optimize.UglifyJsPlugin
 
     config.plugins.push new CompressionPlugin
-      asset: "{file}.gz",
+      asset: "{file}",
       algorithm: "gzip",
       regExp: /\.js$|\.css$/,
       threshold: 10240,
