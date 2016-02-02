@@ -42,10 +42,13 @@ module.exports = (options) ->
     envConstants = tcConstants(ENV)
 
   console.log 'assigning constants to process.env:'
-  console.log envConstants
+  console.log envConstants.ASSET_PREFIX
   console.log '\n'
 
   Object.assign process.env, envConstants
+
+  console.log('asset prefix:')
+  console.log(process.env.ASSET_PREFIX)
 
   # Config
   # Reference: http://webpack.github.io/docs/configuration.html
@@ -77,6 +80,7 @@ module.exports = (options) ->
       path          : path.join(dirname, '/dist')
       filename      : '[name].[hash].js'
       chunkFilename : '[name].[hash].js'
+      publicPath    : 'https://s3.amazonaws.com/app.topcoder-dev.com/'
 
   # Devtool
   # Reference: http://webpack.github.io/docs/configuration.html#devtool
