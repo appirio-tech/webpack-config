@@ -20,7 +20,8 @@ configEnvConstants = (ENV) ->
       HELP_APP_URL       : 'help.topcoder-dev.com'
       MAIN_URL           : 'https://www.topcoder-dev.com'
       PHOTO_LINK_LOCATION: 'https://community.topcoder-dev.com'
-      SWIFT_PROGRAM_URL  : 'apple.topcoder-dev.com'
+      SWIFT_PROGRAM_URL  : 'apple.topcoder-dev.com',
+      TCO16_URL          : '//tco16.topcoder-dev.com'
 
 
   if ENV == 'QA'
@@ -42,7 +43,8 @@ configEnvConstants = (ENV) ->
     HELP_APP_URL       : 'help.topcoder-qa.com'
     MAIN_URL           : 'https://www.topcoder-qa.com'
     PHOTO_LINK_LOCATION: 'https://community.topcoder-qa.com'
-    SWIFT_PROGRAM_URL  : 'apple.topcoder-qa.com'
+    SWIFT_PROGRAM_URL  : 'apple.topcoder-qa.com',
+    TCO16_URL          : '//tco16.topcoder-qa.com'
 
   if ENV == 'PROD'
     Object.assign constants,
@@ -63,7 +65,8 @@ configEnvConstants = (ENV) ->
     HELP_APP_URL       : 'help.topcoder.com'
     MAIN_URL           : 'https://www.topcoder.com'
     PHOTO_LINK_LOCATION: 'https://community.topcoder.com'
-    SWIFT_PROGRAM_URL  : 'apple.topcoder.com'
+    SWIFT_PROGRAM_URL  : 'apple.topcoder.com',
+    TCO16_URL          : '//tco16.topcoder.com'
 
   constants
 
