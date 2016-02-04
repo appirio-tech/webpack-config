@@ -11,65 +11,44 @@ module.exports = (options) ->
 
   dirname = dirname || __dirname
 
-  # Default flags for build
-  BUILD = false
   TEST  = false
-  ENV   = process.env.ENV || 'MOCK'
-  SITE  = 'CONNECT'
+  BUILD = false
+  isTC  = process.argv.filter (arg) -> arg == '--tc'
+  SITE  = if isTC then 'TC' else 'CONNECT'
+  ENV   = process.env.ENV || if isTC then 'DEV' else 'MOCK'
 
-  usePort    = 8080
-  portIsNext = false
-
-  # Pull flags from command line arguments
   process.argv.forEach (arg) ->
     TEST  = true   if arg == '--test'
     BUILD = true   if arg == '--build'
-    SITE  = 'TC'   if arg == '--tc'
 
     ENV = 'DEV'    if arg == '--dev'
     ENV = 'QA'     if arg == '--qa'
     ENV = 'PROD'   if arg == '--prod'
-
-    if portIsNext
-      usePort    = arg
-      portIsNext = false
-
-    portIsNext = true if arg == '--port'
 
   if SITE == 'CONNECT'
     envConstants = connectConstants(ENV)
   else if SITE == 'TC'
     envConstants = tcConstants(ENV)
 
-  console.log 'assigning constants to process.env:'
+  console.log 'Assigning the following constants to process.env:'
   console.log envConstants
   console.log '\n'
 
   Object.assign process.env, envConstants
 
-  # Config
   # Reference: http://webpack.github.io/docs/configuration.html
-  # This is the object where all configuration gets set
-
   config         = {}
   config.context = dirname
 
-  # Entry
   # Reference: http://webpack.github.io/docs/configuration.html#entry
-  # This is a convenience default. Override in local webpack config if needed
-  # Should be an empty object if it's generating a test build
-  # Karma will set this when it's a test build
-
-  if entry
+  if TEST && !entry
+    config.entry = {}
+  else if entry
     config.entry = entry
   else
     config.entry = path.join dirname, '/example/example.coffee'
 
-  # Output
   # Reference: http://webpack.github.io/docs/configuration.html#output
-  # Should be an empty object if it's generating a test build
-  # Karma will handle setting it up for you when it's a test build
-
   if TEST
     config.output = {}
   else
@@ -78,10 +57,7 @@ module.exports = (options) ->
       filename      : '[name].[hash].js'
       chunkFilename : '[name].[hash].js'
 
-  # Devtool
   # Reference: http://webpack.github.io/docs/configuration.html#devtool
-  # Type of sourcemap to use per build type
-
   if TEST
     config.devtool = 'inline-source-map'
   else if BUILD
@@ -89,18 +65,11 @@ module.exports = (options) ->
   else
     config.devtool = 'eval'
 
-  # Loaders
   # Reference: http://webpack.github.io/docs/configuration.html#module-loaders
   # List: http://webpack.github.io/docs/list-of-loaders.html
-  # This handles most of the magic responsible for converting modules
-
   config.module =
     preLoaders: []
     loaders: [
-      # JS LOADER
-      # Reference: https://github.com/babel/babel-loader
-      # Transpile .js files using babel-loader
-      # Compiles ES6 and ES7 into ES5 code
       test: /\.js$/
       loader: 'babel'
       exclude: /node_modules\/(?!appirio-tech.*)/
@@ -182,15 +151,13 @@ module.exports = (options) ->
     ]
 
 
-  # Plugins
   # Reference: http://webpack.github.io/docs/configuration.html#plugins
   # List: http://webpack.github.io/docs/list-of-plugins.html
-
   config.plugins = []
 
-  if !TEST
-    config.plugins.push new ExtractTextPlugin '[name].[hash].css'
+  config.plugins.push new ExtractTextPlugin '[name].[hash].css'
 
+  if !TEST
     config.plugins.push new HtmlWebpackPlugin
       template: template || './example/index.html'
       inject: 'body'
@@ -206,8 +173,6 @@ module.exports = (options) ->
     # Dedupe modules in the output
     config.plugins.push new webpack.optimize.DedupePlugin()
 
-    # Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
-    # Minify all javascript, switch loaders to minimizing mode
     config.plugins.push new webpack.optimize.UglifyJsPlugin
       mangle:
         except: ['Auth0']
