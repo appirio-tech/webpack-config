@@ -137,7 +137,6 @@ module.exports = (options) ->
       '.jade'
       '.jader'
       '.scss'
-      '.css'
       '.svg'
       '.png'
       '.gif'
