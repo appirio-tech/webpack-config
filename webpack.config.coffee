@@ -13,7 +13,7 @@ module.exports = (options) ->
 
   TEST  = false
   BUILD = false
-  isTC  = process.argv.filter (arg) -> arg == '--tc'
+  isTC  = process.argv.some (arg) -> arg == '--tc'
   SITE  = if isTC then 'TC' else 'CONNECT'
   ENV   = process.env.ENV || if isTC then 'DEV' else 'MOCK'
 
