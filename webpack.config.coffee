@@ -173,9 +173,9 @@ module.exports = (options) ->
     # Dedupe modules in the output
     config.plugins.push new webpack.optimize.DedupePlugin()
 
-    config.plugins.push new webpack.optimize.UglifyJsPlugin
-      mangle:
-        except: ['Auth0']
+    uglifyOptions = config.uglifyOptions || { mangle: true }
+
+    config.plugins.push new webpack.optimize.UglifyJsPlugin uglifyOptions
 
     config.plugins.push new CompressionPlugin
       asset: "{file}",
