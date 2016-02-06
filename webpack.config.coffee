@@ -174,6 +174,8 @@ module.exports = (options) ->
     config.plugins.push new webpack.optimize.DedupePlugin()
 
     uglifyOptions = config.uglifyOptions || { mangle: true }
+    console.log('uglifyOptions')
+    console.log(uglifyOptions)
 
     config.plugins.push new webpack.optimize.UglifyJsPlugin uglifyOptions
 
