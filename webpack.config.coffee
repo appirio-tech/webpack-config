@@ -70,7 +70,7 @@ module.exports = (options) ->
   config.module =
     preLoaders: []
     loaders: [
-      test: /\.js$/
+      test: /\.jsx?$/
       loader: 'babel'
       exclude: /node_modules\/(?!appirio-tech.*)/
       include: path.join dirname, '..'
@@ -119,7 +119,7 @@ module.exports = (options) ->
       loader: 'file'
     ]
     postLoaders: [
-      test: /\.js|\.coffee|\.cjsx$/
+      test: /\.js|\.coffee|\.c?jsx$/
       loader: 'transform/cacheable?envify'
     ]
 
@@ -132,6 +132,7 @@ module.exports = (options) ->
     extensions: [
       ''
       '.js'
+      '.jsx'
       '.json'
       '.coffee'
       '.jade'
