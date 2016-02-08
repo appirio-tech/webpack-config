@@ -70,7 +70,7 @@ module.exports = (options) ->
   config.module =
     preLoaders: []
     loaders: [
-      test: /\.jsx?$/
+      test: /\.(js|jsx)$/
       loader: 'babel'
       exclude: /node_modules\/(?!appirio-tech.*)/
       include: path.join dirname, '..'
@@ -91,7 +91,7 @@ module.exports = (options) ->
       test: /\.jader$/
       loader: 'jade-react'
     ,
-      test: /\.coffee|litcoffee|cjsx$/
+      test: /\.(coffee|litcoffee|cjsx)$/
       loader: 'babel?presets[]=react,presets[]=es2015!coffee!cjsx'
     ,
       test: /\.json$/
@@ -119,7 +119,7 @@ module.exports = (options) ->
       loader: 'file'
     ]
     postLoaders: [
-      test: /\.js|\.coffee|\.c?jsx$/
+      test: /\.(js|coffee|cjsx|jsx)$/
       loader: 'transform/cacheable?envify'
     ]
 
