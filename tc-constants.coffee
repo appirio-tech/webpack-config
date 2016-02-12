@@ -54,7 +54,7 @@ configEnvConstants = (ENV) ->
     AUTH_API_URL  : 'https://api.topcoder.com/v3'
     auth0Callback : 'https://api.topcoder.com/pub/callback.html'
     auth0Domain   : 'topcoder.auth0.com'
-    clientId      : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
+    clientId      : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
     domain        : 'topcoder.com'
     ENV           : 'PROD'
 
