@@ -76,6 +76,7 @@ module.exports = (options) ->
       include: path.join dirname, '..'
       query:
         presets: [ 'es2015', 'react', 'stage-2' ]
+        plugins: [ 'lodash' ]
     ,
       test: /input\-moment/
       loader: 'babel'
@@ -92,7 +93,7 @@ module.exports = (options) ->
       loader: 'jade-react'
     ,
       test: /\.(coffee|litcoffee|cjsx)$/
-      loader: 'babel?presets[]=react,presets[]=es2015,presets[]=stage-2!coffee!cjsx'
+      loader: 'babel?presets[]=react,presets[]=es2015,presets[]=stage-2,plugins[]=lodash!coffee!cjsx'
     ,
       test: /\.json$/
       loader: 'json'
