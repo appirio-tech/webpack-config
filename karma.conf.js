@@ -40,7 +40,7 @@ module.exports = function(config) {
     // Preprocess matching files before serving them to the browser
     preprocessors: {
       './app/**/!(*.spec)+(.js)': ['webpack', 'coverage'],
-      path.join(dirname, 'tests.webpack.js'): ['webpack', 'sourcemap']
+      '**/tests.webpack.js': ['webpack', 'sourcemap']
     },
 
     webpack: webpackConfig,
