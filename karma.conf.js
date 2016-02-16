@@ -1,4 +1,4 @@
-require('./node_modules/coffee-script/register')
+// require('./node_modules/coffee-script/register')
 
 var webpackConfig = require('./webpack.config.js')
 
@@ -19,7 +19,7 @@ module.exports = function(config) {
     // Base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: './',
 
-    frameworks: ['mocha', 'chai', 'sinon', 'chai-sinon'],
+    frameworks: ['mocha'],
 
     // List of files / patterns to load in the browser
     files: [
