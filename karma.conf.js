@@ -1,6 +1,6 @@
-// require('./node_modules/coffee-script/register')
 
 var webpackConfig = require('./webpack.config.js')
+var path          = require('path')
 
 // Make jQuery globally available
 webpackConfig.module.loaders.push({
@@ -15,6 +15,10 @@ webpackConfig.externals = {
 }
 
 module.exports = function(config) {
+  var dirname = __dirname
+  if (config.dirname) {
+    dirname = config.dirname
+  }
   config.set({
     // Base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: './',
@@ -24,7 +28,7 @@ module.exports = function(config) {
     // List of files / patterns to load in the browser
     files: [
       './node_modules/jquery/dist/jquery.js',
-      'tests.webpack.js'
+      path.join(dirname, 'tests.webpack.js')
     ],
 
     exclude: ['package.js', 'index.js'],
