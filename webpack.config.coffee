@@ -75,7 +75,7 @@ module.exports = (options) ->
       exclude: /node_modules\/(?!appirio-tech.*)/
       include: path.join dirname, '..'
       query:
-        presets: [ 'es2015', 'react' ]
+        presets: [ 'es2015', 'react', 'stage-2' ]
     ,
       test: /input\-moment/
       loader: 'babel'
@@ -92,7 +92,7 @@ module.exports = (options) ->
       loader: 'jade-react'
     ,
       test: /\.(coffee|litcoffee|cjsx)$/
-      loader: 'babel?presets[]=react,presets[]=es2015!coffee!cjsx'
+      loader: 'babel?presets[]=react,presets[]=es2015,presets[]=stage-2!coffee!cjsx'
     ,
       test: /\.json$/
       loader: 'json'
