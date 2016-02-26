@@ -21,7 +21,7 @@ configEnvConstants = (ENV) ->
       MAIN_URL           : 'https://www.topcoder-dev.com'
       PHOTO_LINK_LOCATION: 'https://community.topcoder-dev.com'
       SWIFT_PROGRAM_URL  : 'apple.topcoder-dev.com',
-      TCO16_URL          : '//tco16.topcoder-dev.com'
+      TCO16_URL          : 'http://tco16.topcoder-dev.com'
 
 
   if ENV == 'QA'
@@ -44,7 +44,7 @@ configEnvConstants = (ENV) ->
     MAIN_URL           : 'https://www.topcoder-qa.com'
     PHOTO_LINK_LOCATION: 'https://community.topcoder-qa.com'
     SWIFT_PROGRAM_URL  : 'apple.topcoder-qa.com',
-    TCO16_URL          : '//tco16.topcoder-qa.com'
+    TCO16_URL          : 'http://tco16.topcoder-qa.com'
 
   if ENV == 'PROD'
     Object.assign constants,
@@ -54,7 +54,7 @@ configEnvConstants = (ENV) ->
     AUTH_API_URL  : 'https://api.topcoder.com/v3'
     auth0Callback : 'https://api.topcoder.com/pub/callback.html'
     auth0Domain   : 'topcoder.auth0.com'
-    clientId      : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
+    clientId      : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
     domain        : 'topcoder.com'
     ENV           : 'PROD'
 
@@ -66,7 +66,7 @@ configEnvConstants = (ENV) ->
     MAIN_URL           : 'https://www.topcoder.com'
     PHOTO_LINK_LOCATION: 'https://community.topcoder.com'
     SWIFT_PROGRAM_URL  : 'apple.topcoder.com',
-    TCO16_URL          : '//tco16.topcoder.com'
+    TCO16_URL          : 'http://tco16.topcoder.com'
 
   constants
 
