@@ -19,6 +19,10 @@ module.exports = function(config) {
   if (config.dirname) {
     dirname = config.dirname
   }
+
+  var testsrc = config.testsrc ? config.testsrc : 'src'
+  var testFiles = testsrc + '/**/*.spec.js';
+  console.log(testFiles);
   config.set({
     // Base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: './',
@@ -28,7 +32,7 @@ module.exports = function(config) {
     // List of files / patterns to load in the browser
     files: [
       './node_modules/jquery/dist/jquery.js',
-      path.join(dirname, 'tests.webpack.js')
+      testFiles
     ],
 
     exclude: ['package.js', 'index.js'],
@@ -40,7 +44,14 @@ module.exports = function(config) {
     // Preprocess matching files before serving them to the browser
     preprocessors: {
       './app/**/!(*.spec)+(.js)': ['webpack', 'coverage'],
-      '**/tests.webpack.js': ['webpack', 'sourcemap']
+      '**/*.spec.js' : ['babel', 'webpack']
+    },
+
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015', 'react', 'stage-2'],
+        sourceMap: 'inline'
+      }
     },
 
     webpack: webpackConfig,
