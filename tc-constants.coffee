@@ -57,6 +57,7 @@ configEnvConstants = (ENV) ->
     clientId      : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
     domain        : 'topcoder.com'
     ENV           : 'PROD'
+    NODE_ENV      : 'production'
 
     ARENA_URL          : '//arena.topcoder.com'
     BLOG_LOCATION      : 'https://www.topcoder.com/feed/?post_type=blog'
