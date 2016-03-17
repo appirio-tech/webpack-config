@@ -27,7 +27,6 @@ module.exports = (options) ->
     ENV = 'QA'     if arg == '--qa'
     ENV = 'PROD'   if arg == '--prod'
 
-
     if arg == '--port'
       port = arr[i + 1]
 
