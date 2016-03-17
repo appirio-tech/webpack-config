@@ -2,6 +2,7 @@ module.exports = (options) ->
   path              = require 'path'
   webpack           = require 'webpack'
   ExtractTextPlugin = require 'extract-text-webpack-plugin'
+  OpenBrowserPlugin = require 'open-browser-webpack-plugin'
   HtmlWebpackPlugin = require 'html-webpack-plugin'
   CompressionPlugin = require 'compression-webpack-plugin'
   connectConstants  = require './connect-constants'
@@ -16,14 +17,19 @@ module.exports = (options) ->
   isTC  = process.argv.some (arg) -> arg == '--tc'
   SITE  = if isTC then 'TC' else 'CONNECT'
   ENV   = process.env.ENV || if isTC then 'DEV' else 'MOCK'
+  port  = 8080
 
-  process.argv.forEach (arg) ->
+  process.argv.forEach (arg, i, arr) ->
     TEST  = true   if arg == '--test'
     BUILD = true   if arg == '--build'
 
     ENV = 'DEV'    if arg == '--dev'
     ENV = 'QA'     if arg == '--qa'
     ENV = 'PROD'   if arg == '--prod'
+
+
+    if arg == '--port'
+      port = arr[i + 1]
 
   if SITE == 'CONNECT'
     envConstants = connectConstants(ENV)
@@ -165,6 +171,11 @@ module.exports = (options) ->
       inject: 'body'
       favicon: options.favicon
       NEW_RELIC_APPLICATION_ID: process.env.NEW_RELIC_APPLICATION_ID
+
+    browserUrl = options.browserUrl || 'http://localhost:' + port
+
+    config.plugins.push new OpenBrowserPlugin
+      url: browserUrl
 
   if BUILD
     # Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin

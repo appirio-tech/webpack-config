@@ -6,6 +6,7 @@
     "angular": "^1.4.x",
     "font-awesome": "^4.5.0",
     "npm-prepublish": "^1.2.1",
+    "open-browser-webpack-plugin": "0.0.2",
     "react": "0.14.x",
     "react-dom": "0.14.x",
     "zepto": "0.0.4"
