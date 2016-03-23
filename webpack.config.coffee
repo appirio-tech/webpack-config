@@ -17,6 +17,7 @@ module.exports = (options) ->
   SITE  = if isTC then 'TC' else 'CONNECT'
   ENV   = process.env.ENV || if isTC then 'DEV' else 'MOCK'
   port  = 8080
+  useMockData = false
 
   process.argv.forEach (arg) ->
     TEST  = true   if arg == '--test'
@@ -25,6 +26,7 @@ module.exports = (options) ->
     ENV = 'DEV'    if arg == '--dev'
     ENV = 'QA'     if arg == '--qa'
     ENV = 'PROD'   if arg == '--prod'
+    useMockData = true if arg == '--mock'
 
   if SITE == 'CONNECT'
     envConstants = connectConstants(ENV)
@@ -153,12 +155,14 @@ module.exports = (options) ->
       path.join dirname, '/node_modules/appirio-styles/styles'
     ]
 
-
   # Reference: http://webpack.github.io/docs/configuration.html#plugins
   # List: http://webpack.github.io/docs/list-of-plugins.html
   config.plugins = []
 
   config.plugins.push new ExtractTextPlugin '[name].[hash].css'
+
+  config.plugins.push new webpack.DefinePlugin
+    __MOCK__: JSON.stringify(JSON.parse(useMockData || 'false'))
 
   if !TEST
     config.plugins.push new HtmlWebpackPlugin
@@ -168,6 +172,9 @@ module.exports = (options) ->
       NEW_RELIC_APPLICATION_ID: process.env.NEW_RELIC_APPLICATION_ID
 
   if BUILD
+    # Do not include any .mock.js files if this is a build
+    config.plugins.push new webpack.IgnorePlugin /\.mock\.js/
+
     # Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
     # Only emit files when there are no errors
     config.plugins.push new webpack.NoErrorsPlugin()
