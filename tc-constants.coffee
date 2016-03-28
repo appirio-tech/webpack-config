@@ -13,7 +13,7 @@ configEnvConstants = (ENV) ->
     domain        : 'topcoder-dev.com'
     ENV           : 'DEV'
 
-    NEW_RELIC_APPLICATION_ID: process.env.TRAVIS_BRANCH ? '8957921' : ''
+    NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '8957921' else ''
 
     ARENA_URL          : '//arena.topcoder-dev.com'
     BLOG_LOCATION      : 'https://www.topcoder-dev.com/feed/?post_type=blog'
@@ -38,7 +38,7 @@ configEnvConstants = (ENV) ->
     domain        : 'topcoder-qa.com'
     ENV           : 'QA'
 
-    NEW_RELIC_APPLICATION_ID: process.env.TRAVIS_BRANCH ? '11199233' : ''
+    NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '11199233' else ''
 
     ARENA_URL          : '//arena.topcoder-qa.com'
     BLOG_LOCATION      : 'https://www.topcoder-qa.com/feed/?post_type=blog'
@@ -63,7 +63,7 @@ configEnvConstants = (ENV) ->
     ENV           : 'PROD'
     NODE_ENV      : 'production'
 
-    NEW_RELIC_APPLICATION_ID: process.env.TRAVIS_BRANCH ? '11352758' : ''
+    NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '11352758' else ''
 
     ARENA_URL          : '//arena.topcoder.com'
     BLOG_LOCATION      : 'https://www.topcoder.com/feed/?post_type=blog'
