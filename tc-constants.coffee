@@ -3,25 +3,27 @@ configEnvConstants = (ENV) ->
 
   if ENV == 'DEV'
     Object.assign constants,
-      API_URL       : 'https://api.topcoder-dev.com/v3'
-      API_URL_V2    : 'https://api.topcoder-dev.com/v2'
-      ASSET_PREFIX  : 'https://s3.amazonaws.com/app.topcoder-dev.com/'
-      AUTH_API_URL  : 'https://api.topcoder-dev.com/v3'
-      auth0Callback : 'https://api.topcoder-dev.com/pub/callback.html'
-      auth0Domain   : 'topcoder-dev.auth0.com'
-      clientId      : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
-      domain        : 'topcoder-dev.com'
-      ENV           : 'DEV'
+    API_URL       : 'https://api.topcoder-dev.com/v3'
+    API_URL_V2    : 'https://api.topcoder-dev.com/v2'
+    ASSET_PREFIX  : 'https://s3.amazonaws.com/app.topcoder-dev.com/'
+    AUTH_API_URL  : 'https://api.topcoder-dev.com/v3'
+    auth0Callback : 'https://api.topcoder-dev.com/pub/callback.html'
+    auth0Domain   : 'topcoder-dev.auth0.com'
+    clientId      : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
+    domain        : 'topcoder-dev.com'
+    ENV           : 'DEV'
 
-      ARENA_URL          : '//arena.topcoder-dev.com'
-      BLOG_LOCATION      : 'https://www.topcoder-dev.com/feed/?post_type=blog'
-      COMMUNITY_URL      : '//community.topcoder-dev.com'
-      FORUMS_APP_URL     : '//apps.topcoder-dev.com/forums'
-      HELP_APP_URL       : 'help.topcoder-dev.com'
-      MAIN_URL           : 'https://www.topcoder-dev.com'
-      PHOTO_LINK_LOCATION: 'https://community.topcoder-dev.com'
-      SWIFT_PROGRAM_URL  : 'apple.topcoder-dev.com',
-      TCO16_URL          : 'http://tco16.topcoder-dev.com'
+    NEW_RELIC_APPLICATION_ID: process.env.TRAVIS_BRANCH ? '8957921' : ''
+
+    ARENA_URL          : '//arena.topcoder-dev.com'
+    BLOG_LOCATION      : 'https://www.topcoder-dev.com/feed/?post_type=blog'
+    COMMUNITY_URL      : '//community.topcoder-dev.com'
+    FORUMS_APP_URL     : '//apps.topcoder-dev.com/forums'
+    HELP_APP_URL       : 'help.topcoder-dev.com'
+    MAIN_URL           : 'https://www.topcoder-dev.com'
+    PHOTO_LINK_LOCATION: 'https://community.topcoder-dev.com'
+    SWIFT_PROGRAM_URL  : 'apple.topcoder-dev.com',
+    TCO16_URL          : 'http://tco16.topcoder-dev.com'
 
 
   if ENV == 'QA'
@@ -35,6 +37,8 @@ configEnvConstants = (ENV) ->
     clientId      : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
     domain        : 'topcoder-qa.com'
     ENV           : 'QA'
+
+    NEW_RELIC_APPLICATION_ID: process.env.TRAVIS_BRANCH ? '11199233' : ''
 
     ARENA_URL          : '//arena.topcoder-qa.com'
     BLOG_LOCATION      : 'https://www.topcoder-qa.com/feed/?post_type=blog'
@@ -58,6 +62,8 @@ configEnvConstants = (ENV) ->
     domain        : 'topcoder.com'
     ENV           : 'PROD'
     NODE_ENV      : 'production'
+
+    NEW_RELIC_APPLICATION_ID: process.env.TRAVIS_BRANCH ? '11352758' : ''
 
     ARENA_URL          : '//arena.topcoder.com'
     BLOG_LOCATION      : 'https://www.topcoder.com/feed/?post_type=blog'
