@@ -75,16 +75,11 @@ module.exports = (options) ->
     loaders: [
       test: /\.(js|jsx)$/
       loader: 'babel'
-      exclude: /node_modules\/(?!appirio-tech.*|topcoder)/
+      exclude: /node_modules\/(?!appirio|topcoder|input\-moment)/
       include: path.join dirname, '..'
       query:
         presets: [ 'es2015', 'react', 'stage-2' ]
         plugins: [ 'lodash' ]
-    ,
-      test: /input\-moment/
-      loader: 'babel'
-      query:
-        presets: [ 'es2015', 'react' ]
     ,
       test: /^(?!.*\.react\.jade$)(.*\.jade$)/
       loader: 'jade'
