@@ -75,7 +75,7 @@ module.exports = (options) ->
     loaders: [
       test: /\.(js|jsx)$/
       loader: 'babel'
-      exclude: /node_modules\/(?!appirio|topcoder|input\-moment)/
+      exclude: /node_modules\/(?!appirio|topcoder|tc|input\-moment)/
       include: path.join dirname, '..'
       query:
         presets: [ 'es2015', 'react', 'stage-2' ]
