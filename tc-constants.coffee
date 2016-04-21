@@ -3,15 +3,15 @@ configEnvConstants = (ENV) ->
 
   if ENV == 'DEV'
     Object.assign constants,
-    API_URL       : 'https://api.topcoder-dev.com/v3'
-    API_URL_V2    : 'https://api.topcoder-dev.com/v2'
-    ASSET_PREFIX  : 'https://s3.amazonaws.com/app.topcoder-dev.com/'
-    AUTH_API_URL  : 'https://api.topcoder-dev.com/v3'
-    auth0Callback : 'https://api.topcoder-dev.com/pub/callback.html'
-    AUTH0_DOMAIN   : 'topcoder-dev.auth0.com'
-    AUTH0_CLIENT_ID      : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
-    domain        : 'topcoder-dev.com'
-    ENV           : 'DEV'
+    API_URL           : 'https://api.topcoder-dev.com/v3'
+    API_URL_V2        : 'https://api.topcoder-dev.com/v2'
+    ASSET_PREFIX      : 'https://s3.amazonaws.com/app.topcoder-dev.com/'
+    AUTH_API_URL      : 'https://api.topcoder-dev.com/v3'
+    auth0Callback     : 'https://api.topcoder-dev.com/pub/callback.html'
+    AUTH0_DOMAIN      : 'topcoder-dev.auth0.com'
+    AUTH0_CLIENT_ID   : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
+    domain            : 'topcoder-dev.com'
+    ENV               : 'DEV'
 
     NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '8957921' else ''
 
@@ -28,15 +28,15 @@ configEnvConstants = (ENV) ->
 
   if ENV == 'QA'
     Object.assign constants,
-    API_URL       : 'https://api.topcoder-qa.com/v3'
-    API_URL_V2    : 'https://api.topcoder-qa.com/v2'
-    ASSET_PREFIX  : 'https://s3.amazonaws.com/app.topcoder-qa.com/'
-    AUTH_API_URL  : 'https://api.topcoder-qa.com/v3'
-    auth0Callback : 'https://api.topcoder-qa.com/pub/callback.html'
-    AUTH0_DOMAIN   : 'topcoder-qa.auth0.com'
-    AUTH0_CLIENT_ID      : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
-    domain        : 'topcoder-qa.com'
-    ENV           : 'QA'
+    API_URL           : 'https://api.topcoder-qa.com/v3'
+    API_URL_V2        : 'https://api.topcoder-qa.com/v2'
+    ASSET_PREFIX      : 'https://s3.amazonaws.com/app.topcoder-qa.com/'
+    AUTH_API_URL      : 'https://api.topcoder-qa.com/v3'
+    auth0Callback     : 'https://api.topcoder-qa.com/pub/callback.html'
+    AUTH0_DOMAIN      : 'topcoder-qa.auth0.com'
+    AUTH0_CLIENT_ID   : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
+    domain            : 'topcoder-qa.com'
+    ENV               : 'QA'
 
     NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '11199233' else ''
 
@@ -52,16 +52,16 @@ configEnvConstants = (ENV) ->
 
   if ENV == 'PROD'
     Object.assign constants,
-    API_URL       : 'https://api.topcoder.com/v3'
-    API_URL_V2    : 'https://api.topcoder.com/v2'
-    ASSET_PREFIX  : 'https://s3.amazonaws.com/app.topcoder.com/'
-    AUTH_API_URL  : 'https://api.topcoder.com/v3'
-    auth0Callback : 'https://api.topcoder.com/pub/callback.html'
-    AUTH0_DOMAIN   : 'topcoder.auth0.com'
-    AUTH0_CLIENT_ID      : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
-    domain        : 'topcoder.com'
-    ENV           : 'PROD'
-    NODE_ENV      : 'production'
+    API_URL           : 'https://api.topcoder.com/v3'
+    API_URL_V2        : 'https://api.topcoder.com/v2'
+    ASSET_PREFIX      : 'https://s3.amazonaws.com/app.topcoder.com/'
+    AUTH_API_URL      : 'https://api.topcoder.com/v3'
+    auth0Callback     : 'https://api.topcoder.com/pub/callback.html'
+    AUTH0_DOMAIN      : 'topcoder.auth0.com'
+    AUTH0_CLIENT_ID   : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
+    domain            : 'topcoder.com'
+    ENV               : 'PROD'
+    NODE_ENV          : 'production'
 
     NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '11352758' else ''
 
