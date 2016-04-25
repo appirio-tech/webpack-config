@@ -13,6 +13,7 @@ module.exports = (options) ->
 
   TEST  = false
   BUILD = false
+  SILENT = false
   isTC  = process.argv.some (arg) -> arg == '--tc'
   SITE  = if isTC then 'TC' else 'CONNECT'
   ENV   = process.env.ENV || if isTC then 'DEV' else 'MOCK'
@@ -22,6 +23,7 @@ module.exports = (options) ->
   process.argv.forEach (arg) ->
     TEST  = true   if arg == '--test'
     BUILD = true   if arg == '--build'
+    SILENT = true  if arg == '--silent'
 
     ENV = 'DEV'    if arg == '--dev'
     ENV = 'QA'     if arg == '--qa'
@@ -33,9 +35,10 @@ module.exports = (options) ->
   else if SITE == 'TC'
     envConstants = tcConstants(ENV)
 
-  console.log 'Assigning the following constants to process.env:'
-  console.log envConstants
-  console.log '\n'
+  unless SILENT
+    console.log 'Assigning the following constants to process.env:'
+    console.log envConstants
+    console.log '\n'
 
   Object.assign process.env, envConstants
 
