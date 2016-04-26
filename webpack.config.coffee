@@ -14,7 +14,7 @@ module.exports = (options) ->
   BUILD  = false
   SILENT = false
   MOCK   = false
-  ENV    = 'DEV'
+  ENV    = process.env.ENV || 'DEV'
 
   process.argv.forEach (arg) ->
     TEST   = true  if arg == '--test'
