@@ -4,36 +4,29 @@ module.exports = (options) ->
   ExtractTextPlugin = require 'extract-text-webpack-plugin'
   HtmlWebpackPlugin = require 'html-webpack-plugin'
   CompressionPlugin = require 'compression-webpack-plugin'
-  connectConstants  = require './connect-constants'
-  tcConstants       = require './tc-constants'
+  constants         = require './constants.coffee'
 
   { dirname, entry, template } = options
 
   dirname = dirname || __dirname
 
-  TEST  = false
-  BUILD = false
+  TEST   = false
+  BUILD  = false
   SILENT = false
-  isTC  = process.argv.some (arg) -> arg == '--tc'
-  SITE  = if isTC then 'TC' else 'CONNECT'
-  ENV   = process.env.ENV || if isTC then 'DEV' else 'MOCK'
-  port  = 8080
-  useMockData = false
+  MOCK   = false
+  ENV    = 'DEV'
 
   process.argv.forEach (arg) ->
-    TEST  = true   if arg == '--test'
-    BUILD = true   if arg == '--build'
+    TEST   = true  if arg == '--test'
+    BUILD  = true  if arg == '--build'
     SILENT = true  if arg == '--silent'
 
-    ENV = 'DEV'    if arg == '--dev'
-    ENV = 'QA'     if arg == '--qa'
-    ENV = 'PROD'   if arg == '--prod'
-    useMockData = true if arg == '--mock'
+    ENV = 'DEV'  if arg == '--dev'
+    ENV = 'QA'   if arg == '--qa'
+    ENV = 'PROD' if arg == '--prod'
+    MOCK = true  if arg == '--mock'
 
-  if SITE == 'CONNECT'
-    envConstants = connectConstants(ENV)
-  else if SITE == 'TC'
-    envConstants = tcConstants(ENV)
+  envConstants = constants(ENV)
 
   unless SILENT
     console.log 'Assigning the following constants to process.env:'
@@ -160,7 +153,7 @@ module.exports = (options) ->
   config.plugins.push new ExtractTextPlugin '[name].[hash].css'
 
   config.plugins.push new webpack.DefinePlugin
-    __MOCK__: JSON.stringify(JSON.parse(useMockData || 'false'))
+    __MOCK__: JSON.stringify(JSON.parse(MOCK || 'false'))
 
   if !TEST
     config.plugins.push new HtmlWebpackPlugin
