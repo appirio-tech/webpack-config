@@ -111,13 +111,14 @@ configEnvConstants = (ENV) ->
     TCO16_URL          : 'http://tco16.topcoder.com'
 
     # Mailchimp
-    MAILCHIMP_LIST_ID       : '72cdd94102'
-    MAILCHIMP_NL_CATEGORY_ID: '4e2f694b65'
-    MAILCHIMP_NL_TCO        : '4376e08f1e'
-    MAILCHIMP_NL_IOS        : '11d81965bb'
-    MAILCHIMP_NL_DEV        : 'e0986266dc'
-    MAILCHIMP_NL_DESIGN     : '9d1b672a99'
-    MAILCHIMP_NL_DATA       : 'cc118bd550'
+    MAILCHIMP_LIST_ID       : '28bfd3c062'
+    MAILCHIMP_NL_CATEGORY_ID: 'a50a144f03'
+    MAILCHIMP_NL_GEN        : '0a332cb42e'
+    MAILCHIMP_NL_TCO        : '2de8cb1a73'
+    MAILCHIMP_NL_IOS        : '1741e6dcbd'
+    MAILCHIMP_NL_DEV        : 'a686e672c7'
+    MAILCHIMP_NL_DESIGN     : '7cbaab0a04'
+    MAILCHIMP_NL_DATA       : 'e81c4a72f1'
 
   constants
 
