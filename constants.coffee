@@ -30,16 +30,6 @@ configEnvConstants = (ENV) ->
     SWIFT_PROGRAM_URL  : 'apple.topcoder-dev.com'
     TCO16_URL          : 'http://tco16.topcoder-dev.com'
 
-    # Mailchimp
-    MAILCHIMP_LIST_ID       : '72cdd94102'
-    MAILCHIMP_NL_CATEGORY_ID: '4e2f694b65'
-    MAILCHIMP_NL_GEN        : '503bdfa93d'
-    MAILCHIMP_NL_TCO        : '4376e08f1e'
-    MAILCHIMP_NL_IOS        : '11d81965bb'
-    MAILCHIMP_NL_DEV        : 'e0986266dc'
-    MAILCHIMP_NL_DESIGN     : '9d1b672a99'
-    MAILCHIMP_NL_DATA       : 'cc118bd550'
-
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
 
@@ -72,16 +62,6 @@ configEnvConstants = (ENV) ->
     PHOTO_LINK_LOCATION: 'https://community.topcoder-qa.com'
     SWIFT_PROGRAM_URL  : 'apple.topcoder-qa.com',
     TCO16_URL          : 'http://tco16.topcoder-qa.com'
-
-    # Mailchimp
-    MAILCHIMP_LIST_ID       : 'b41010a209'
-    MAILCHIMP_NL_CATEGORY_ID: 'b2b2c286aa'
-    MAILCHIMP_NL_GEN        : 'fc9c1cb079'
-    MAILCHIMP_NL_TCO        : '431c7c5c28'
-    MAILCHIMP_NL_IOS        : '219c195129'
-    MAILCHIMP_NL_DEV        : '6118395314'
-    MAILCHIMP_NL_DESIGN     : '9c009ea192'
-    MAILCHIMP_NL_DATA       : '724f9cadee'
 
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
@@ -116,15 +96,6 @@ configEnvConstants = (ENV) ->
     SWIFT_PROGRAM_URL  : 'apple.topcoder.com',
     TCO16_URL          : 'http://tco16.topcoder.com'
 
-    # Mailchimp
-    MAILCHIMP_LIST_ID       : '28bfd3c062'
-    MAILCHIMP_NL_CATEGORY_ID: 'a50a144f03'
-    MAILCHIMP_NL_GEN        : '0a332cb42e'
-    MAILCHIMP_NL_TCO        : '2de8cb1a73'
-    MAILCHIMP_NL_IOS        : '1741e6dcbd'
-    MAILCHIMP_NL_DEV        : 'a686e672c7'
-    MAILCHIMP_NL_DESIGN     : '7cbaab0a04'
-    MAILCHIMP_NL_DATA       : 'e81c4a72f1'
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder.com/connector.html'
 
