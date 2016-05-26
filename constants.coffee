@@ -40,7 +40,7 @@ configEnvConstants = (ENV) ->
     MAILCHIMP_NL_DESIGN     : '9d1b672a99'
     MAILCHIMP_NL_DATA       : 'cc118bd550'
 
-    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/tc'
+    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
 
 
@@ -83,7 +83,7 @@ configEnvConstants = (ENV) ->
     MAILCHIMP_NL_DESIGN     : '9c009ea192'
     MAILCHIMP_NL_DATA       : '724f9cadee'
 
-    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/tc'
+    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
 
   if ENV == 'PROD'
@@ -125,7 +125,7 @@ configEnvConstants = (ENV) ->
     MAILCHIMP_NL_DEV        : 'a686e672c7'
     MAILCHIMP_NL_DESIGN     : '7cbaab0a04'
     MAILCHIMP_NL_DATA       : 'e81c4a72f1'
-    ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/tc'
+    ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder.com/connector.html'
 
   constants
