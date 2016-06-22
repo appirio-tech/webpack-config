@@ -33,6 +33,8 @@ configEnvConstants = (ENV) ->
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
 
+    FILE_PICKER_API_KEY: 'AzFINuQoqTmqw0QEoaw9az'
+    FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-dev'
 
   if ENV == 'QA'
     Object.assign constants,
@@ -66,6 +68,9 @@ configEnvConstants = (ENV) ->
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
 
+    FILE_PICKER_API_KEY: 'ACrnuL2lqRAOOHLOhqwkaz'
+    FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-qa'
+
   if ENV == 'PROD'
     Object.assign constants,
     API_URL           : 'https://api.topcoder.com/v3'
@@ -98,6 +103,9 @@ configEnvConstants = (ENV) ->
 
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder.com/connector.html'
+
+    FILE_PICKER_API_KEY: 'ABqZ3MVqqSeiqL2fMOjTxz'
+    FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-prod'
 
   constants
 
