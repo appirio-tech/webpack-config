@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "angular-mocks": "^1.4.8",
-    "appirio-styles": "0.x.x",
     "appirio-tech-api-schemas": "^5.0.63",
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
