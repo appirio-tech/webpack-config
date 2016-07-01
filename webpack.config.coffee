@@ -143,7 +143,7 @@ module.exports = (options) ->
   config.sassLoader =
     includePaths: [
       path.join dirname, '/node_modules/bourbon/app/assets/stylesheets'
-      path.join dirname, '/node_modules/appirio-styles/styles'
+      path.join dirname, '/node_modules/tc-ui/src/styles'
     ]
 
   # Reference: http://webpack.github.io/docs/configuration.html#plugins
