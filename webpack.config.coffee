@@ -64,12 +64,6 @@ module.exports = (options) ->
   else
     config.devtool = 'eval'
 
-  scssLoaderBase = 'css-loader!sass-loader'
-  scssLoader = if BUILD
-      ExtractTextPlugin.extract('style-loader', scssLoaderBase)
-    else
-      'style-loader!' + scssLoaderBase
-
   # Reference: http://webpack.github.io/docs/configuration.html#module-loaders
   # List: http://webpack.github.io/docs/list-of-loaders.html
   config.module =
@@ -99,7 +93,7 @@ module.exports = (options) ->
       loader: 'json'
     ,
       test: /\.scss$/
-      loader: scssLoader
+      loader: ExtractTextPlugin.extract 'style-loader', 'css-loader!sass-loader'
     ,
       test: /\.css$/
       loader: ExtractTextPlugin.extract 'style-loader', 'css-loader'
