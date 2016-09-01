@@ -29,6 +29,7 @@ configEnvConstants = (ENV) ->
     PHOTO_LINK_LOCATION: 'https://community.topcoder-dev.com'
     SWIFT_PROGRAM_URL  : 'apple.topcoder-dev.com'
     TCO16_URL          : 'http://tco16.topcoder-dev.com'
+    TCO17_URL          : 'http://tco17.topcoder-dev.com'
 
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
@@ -64,6 +65,7 @@ configEnvConstants = (ENV) ->
     PHOTO_LINK_LOCATION: 'https://community.topcoder-qa.com'
     SWIFT_PROGRAM_URL  : 'apple.topcoder-qa.com',
     TCO16_URL          : 'http://tco16.topcoder-qa.com'
+    TCO17_URL          : 'http://tco17.topcoder-qa.com'
 
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
@@ -100,6 +102,7 @@ configEnvConstants = (ENV) ->
     PHOTO_LINK_LOCATION: 'https://community.topcoder.com'
     SWIFT_PROGRAM_URL  : 'apple.topcoder.com',
     TCO16_URL          : 'http://tco16.topcoder.com'
+    TCO17_URL          : 'http://tco17.topcoder.com'
 
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder.com/connector.html'
