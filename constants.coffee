@@ -30,7 +30,7 @@ configEnvConstants = (ENV) ->
     SWIFT_PROGRAM_URL  : 'apple.topcoder-dev.com'
     TCO16_URL          : 'http://tco16.topcoder-dev.com'
     TCO17_URL          : 'http://tco17.topcoder-dev.com'
-    TCO_HOME_URL       : 'https://help.topcoder.com/hc/en-us/articles/222805207'
+    TCO_HOME_URL       : 'https://www.topcoder-dev.com/community/member-programs/topcoder-open/'
 
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
@@ -67,7 +67,7 @@ configEnvConstants = (ENV) ->
     SWIFT_PROGRAM_URL  : 'apple.topcoder-qa.com',
     TCO16_URL          : 'http://tco16.topcoder-qa.com'
     TCO17_URL          : 'http://tco17.topcoder-qa.com'
-    TCO_HOME_URL       : 'https://help.topcoder.com/hc/en-us/articles/222805207'
+    TCO_HOME_URL       : 'https://www.topcoder-dev.com/community/member-programs/topcoder-open/'
 
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
@@ -105,7 +105,7 @@ configEnvConstants = (ENV) ->
     SWIFT_PROGRAM_URL  : 'apple.topcoder.com',
     TCO16_URL          : 'http://tco16.topcoder.com'
     TCO17_URL          : 'http://tco17.topcoder.com'
-    TCO_HOME_URL       : 'https://help.topcoder.com/hc/en-us/articles/222805207'
+    TCO_HOME_URL       : 'https://www.topcoder.com/community/member-programs/topcoder-open/'
 
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder.com/connector.html'
