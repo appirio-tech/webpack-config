@@ -43,6 +43,7 @@ configEnvConstants = (ENV) ->
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
 
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
 
   if ENV == 'QA'
     Object.assign constants,
@@ -86,6 +87,8 @@ configEnvConstants = (ENV) ->
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
 
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
+
   if ENV == 'PROD'
     Object.assign constants,
     API_URL           : 'https://api.topcoder.com/v3'
@@ -127,6 +130,8 @@ configEnvConstants = (ENV) ->
     MAILCHIMP_NL_DATA       : 'e81c4a72f1'
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder.com/connector.html'
+
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio.my.salesforce.com/apex/ConnectLead?connectProjectId='
 
   constants
 
