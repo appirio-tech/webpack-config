@@ -39,6 +39,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-dev'
 
     PREDIX_PROGRAM_ID  : 3448
+    HEAP_ANALYTICS_APP_ID : '4153837120'
 
   if ENV == 'QA'
     Object.assign constants,
@@ -78,6 +79,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-qa'
 
     PREDIX_PROGRAM_ID  : 3448
+    HEAP_ANALYTICS_APP_ID : '4153837120'
 
   if ENV == 'PROD'
     Object.assign constants,
@@ -118,6 +120,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-prod'
 
     PREDIX_PROGRAM_ID  : 3448
+    HEAP_ANALYTICS_APP_ID : '638908330'
 
   constants
 
