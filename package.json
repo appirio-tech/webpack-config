@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "./webpack.config.coffee",
   "devDependencies": {
-    "angular": "^1.4.x",
+    "angular": "~1.5.x",
     "font-awesome": "^4.5.0",
     "npm-prepublish": "^1.2.1",
     "react": "0.14.x",
