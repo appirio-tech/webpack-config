@@ -38,8 +38,9 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: 'AzFINuQoqTmqw0QEoaw9az'
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-dev'
 
-    PREDIX_PROGRAM_ID  : 3448
-    HEAP_ANALYTICS_APP_ID : '4153837120'
+    PREDIX_PROGRAM_ID         : 3448
+    IBM_COGNITIVE_PROGRAM_ID  : 3449
+    HEAP_ANALYTICS_APP_ID     : '4153837120'
 
   if ENV == 'QA'
     Object.assign constants,
@@ -78,8 +79,9 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: 'ACrnuL2lqRAOOHLOhqwkaz'
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-qa'
 
-    PREDIX_PROGRAM_ID  : 3448
-    HEAP_ANALYTICS_APP_ID : '4153837120'
+    PREDIX_PROGRAM_ID         : 3448
+    IBM_COGNITIVE_PROGRAM_ID  : 3449
+    HEAP_ANALYTICS_APP_ID     : '4153837120'
 
   if ENV == 'PROD'
     Object.assign constants,
@@ -119,8 +121,9 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: 'ABqZ3MVqqSeiqL2fMOjTxz'
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-prod'
 
-    PREDIX_PROGRAM_ID  : 3448
-    HEAP_ANALYTICS_APP_ID : '638908330'
+    PREDIX_PROGRAM_ID         : 3448
+    IBM_COGNITIVE_PROGRAM_ID  : 3449
+    HEAP_ANALYTICS_APP_ID     : '638908330'
 
   constants
 
