@@ -21,7 +21,7 @@ configEnvConstants = (ENV) ->
     NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '8957921' else ''
 
     ARENA_URL          : '//arena.topcoder-dev.com'
-    BLOG_LOCATION      : 'https://www.topcoder-dev.com/feed/?post_type=blog'
+    BLOG_LOCATION      : 'https://www.topcoder-dev.com/feed/'
     COMMUNITY_URL      : '//community.topcoder-dev.com'
     FORUMS_APP_URL     : '//apps.topcoder-dev.com/forums'
     HELP_APP_URL       : 'help.topcoder-dev.com'
@@ -62,7 +62,7 @@ configEnvConstants = (ENV) ->
     NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '11199233' else ''
 
     ARENA_URL          : '//arena.topcoder-qa.com'
-    BLOG_LOCATION      : 'https://www.topcoder-qa.com/feed/?post_type=blog'
+    BLOG_LOCATION      : 'https://www.topcoder-qa.com/feed/'
     COMMUNITY_URL      : '//community.topcoder-qa.com'
     FORUMS_APP_URL     : '//apps.topcoder-qa.com/forums'
     HELP_APP_URL       : 'help.topcoder-qa.com'
@@ -104,7 +104,7 @@ configEnvConstants = (ENV) ->
     NEW_RELIC_APPLICATION_ID: if process.env.TRAVIS_BRANCH then '11352758' else ''
 
     ARENA_URL          : '//arena.topcoder.com'
-    BLOG_LOCATION      : 'https://www.topcoder.com/feed/?post_type=blog'
+    BLOG_LOCATION      : 'https://www.topcoder.com/feed/'
     COMMUNITY_URL      : '//community.topcoder.com'
     FORUMS_APP_URL     : '//apps.topcoder.com/forums'
     HELP_APP_URL       : 'help.topcoder.com'
