@@ -75,7 +75,7 @@ configEnvConstants = (ENV) ->
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
 
-    FILE_PICKER_API_KEY: proces.env.FILE_PICKER_API_KEY_QA
+    FILE_PICKER_API_KEY: process.env.FILE_PICKER_API_KEY_QA
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-qa'
 
     PREDIX_PROGRAM_ID  : 3448

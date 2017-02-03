@@ -28,7 +28,7 @@ module.exports = (options) ->
 
   envConstants = constants(ENV)
 
-  unless SILENT
+  unless SILENT || ENV == 'QA' || ENV == 'PROD'
     console.log 'Assigning the following constants to process.env:'
     console.log envConstants
     console.log '\n'
