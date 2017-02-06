@@ -40,6 +40,8 @@ configEnvConstants = (ENV) ->
 
     SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
 
+    CONNECT_SEGMENT_KEY: ''
+
   if ENV == 'QA'
     Object.assign constants,
     API_URL           : 'https://api.topcoder-qa.com/v3'
@@ -78,6 +80,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-qa'
 
     SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
+    CONNECT_SEGMENT_KEY: ''
 
   if ENV == 'PROD'
     Object.assign constants,
@@ -118,6 +121,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-prod'
 
     SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio.my.salesforce.com/apex/ConnectLead?connectProjectId='
+    CONNECT_SEGMENT_KEY: 'ajP6cQ5SN2EMUWoWTOLROVnAHsOlsDCn'
 
   constants
 
