@@ -40,7 +40,7 @@ configEnvConstants = (ENV) ->
 
     SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
 
-    CONNECT_SEGMENT_KEY: ''
+    CONNECT_SEGMENT_KEY: 'QBtLgV8vCiuRX1lDikbMjcoe9aCHkF6n'
 
   if ENV == 'QA'
     Object.assign constants,
