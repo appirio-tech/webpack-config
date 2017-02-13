@@ -11,9 +11,9 @@ configEnvConstants = (ENV) ->
     AUTH_API_URL      : 'https://api.topcoder-dev.com/v3'
     auth0Callback     : 'https://api.topcoder-dev.com/pub/callback.html'
     auth0Domain       : 'topcoder-dev.auth0.com'
-    clientId          : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
+    clientId          : process.env.AUTH0_CLIENT_ID_DEV
     AUTH0_DOMAIN      : 'topcoder-dev.auth0.com'
-    AUTH0_CLIENT_ID   : 'JFDo7HMkf0q2CkVFHojy3zHWafziprhT'
+    AUTH0_CLIENT_ID   : process.env.AUTH0_CLIENT_ID_DEV
     domain            : 'topcoder-dev.com'
     DOMAIN            : 'topcoder-dev.com'
     ENV               : 'DEV'
@@ -35,7 +35,7 @@ configEnvConstants = (ENV) ->
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
 
-    FILE_PICKER_API_KEY: 'AzFINuQoqTmqw0QEoaw9az'
+    FILE_PICKER_API_KEY: process.env.FILE_PICKER_API_KEY_DEV
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-dev'
 
     PREDIX_PROGRAM_ID         : 3448
@@ -52,9 +52,9 @@ configEnvConstants = (ENV) ->
     AUTH_API_URL      : 'https://api.topcoder-qa.com/v3'
     auth0Callback     : 'https://api.topcoder-qa.com/pub/callback.html'
     auth0Domain       : 'topcoder-qa.auth0.com'
-    clientId          : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
+    clientId          : process.env.AUTH0_CLIENT_ID_QA
     AUTH0_DOMAIN      : 'topcoder-qa.auth0.com'
-    AUTH0_CLIENT_ID   : 'EVOgWZlCtIFlbehkq02treuRRoJk12UR'
+    AUTH0_CLIENT_ID   : process.env.AUTH0_CLIENT_ID_QA
     domain            : 'topcoder-qa.com'
     DOMAIN            : 'topcoder-qa.com'
     ENV               : 'QA'
@@ -76,7 +76,7 @@ configEnvConstants = (ENV) ->
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
 
-    FILE_PICKER_API_KEY: 'ACrnuL2lqRAOOHLOhqwkaz'
+    FILE_PICKER_API_KEY: process.env.FILE_PICKER_API_KEY_QA
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-qa'
 
     PREDIX_PROGRAM_ID         : 3448
@@ -93,9 +93,9 @@ configEnvConstants = (ENV) ->
     AUTH_API_URL      : 'https://api.topcoder.com/v3'
     auth0Callback     : 'https://api.topcoder.com/pub/callback.html'
     auth0Domain       : 'topcoder.auth0.com'
-    clientId          : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
+    clientId          : process.env.AUTH0_CLIENT_ID_PROD
     AUTH0_DOMAIN      : 'topcoder.auth0.com'
-    AUTH0_CLIENT_ID   : '6ZwZEUo2ZK4c50aLPpgupeg5v2Ffxp9P'
+    AUTH0_CLIENT_ID   : process.env.AUTH0_CLIENT_ID_PROD
     domain            : 'topcoder.com'
     DOMAIN            : 'topcoder.com'
     ENV               : 'PROD'
@@ -118,7 +118,7 @@ configEnvConstants = (ENV) ->
     ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder.com/connector.html'
 
-    FILE_PICKER_API_KEY: 'ABqZ3MVqqSeiqL2fMOjTxz'
+    FILE_PICKER_API_KEY: process.env.FILE_PICKER_API_KEY_PROD
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-prod'
 
     PREDIX_PROGRAM_ID         : 3448
