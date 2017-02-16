@@ -38,7 +38,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: 'AzFINuQoqTmqw0QEoaw9az'
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-dev'
 
-    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://test.salesforce.com/apex/ConnectLead?connectProjectId='
 
   if ENV == 'QA'
     Object.assign constants,
@@ -77,7 +77,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: 'ACrnuL2lqRAOOHLOhqwkaz'
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-qa'
 
-    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://test.salesforce.com/apex/ConnectLead?connectProjectId='
 
   if ENV == 'PROD'
     Object.assign constants,
@@ -117,7 +117,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: 'ABqZ3MVqqSeiqL2fMOjTxz'
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-prod'
 
-    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio.my.salesforce.com/apex/ConnectLead?connectProjectId='
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://topcoder.my.salesforce.com/apex/ConnectLead?connectProjectId='
 
   constants
 
