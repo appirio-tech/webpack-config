@@ -105,8 +105,17 @@ module.exports = (options) ->
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/
       loader: 'file'
     ,
-      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/
+      test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/
       loader: 'file'
+    ,
+      test: /\.svg$/,
+      loader: 'babel!react-svg?' + JSON.stringify(
+        svgo:
+          plugins: [
+            removeTitle: false
+          ],
+          floatPrecision: 2
+      )
     ]
     postLoaders: [
       test: /\.(js|coffee|cjsx|jsx)$/
