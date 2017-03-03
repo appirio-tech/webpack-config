@@ -99,7 +99,30 @@ module.exports = (options) ->
       # Rename the file using the asset hash
       # Pass along the updated reference to your code
       # You can add here any file extension you want to get copied to your output
-      test: /\.(png|jpg|jpeg|gif)$/
+
+      # WARNING:
+      # We assume all modern code will be ReactJS, and it will use
+      # react-svg-loader to import .svg resources as ReactJS components.
+      # This breaks any legacy code, which require .svg resources by url.
+      # To quickly move such legacy code to the `modern` version webpack.config
+      # use the following workarounds:
+      #
+      # 1. For .svg images loaded like this:
+      #    <img src={require('./some-image.svg')} />
+      #    prepend the url with -!file! to use file-loader instead
+      #    react-svg-loader for this very image:
+      #    <img src={require('-!file!./some-image.svg')} />
+      #
+      # 2. In cases when (1) does not work, like .svg images set as background
+      #    in CSS:
+      #    background: url('./some-image.svg');
+      #    you can rename the .svg file into 'some-image._load_by_url_.svg'.
+      #    With configuration from this branch, WebPack will use file-loader,
+      #    expected by legacy code, to load .svg files with paths ending with
+      #    ._load_by_url_.svg, while using react-svg-loader for any other .svg
+      #    resources.
+
+      test: /\.(png|jpg|jpeg|gif|_load_by_url_\.svg)$/
       loader: 'file'
     ,
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/
@@ -109,6 +132,7 @@ module.exports = (options) ->
       loader: 'file'
     ,
       test: /\.svg$/,
+      exclude: /\._load_by_url_\.svg$/,
       loader: 'babel!react-svg?' + JSON.stringify(
         svgo:
           plugins: [
