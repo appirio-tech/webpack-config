@@ -149,6 +149,7 @@ module.exports = (options) ->
 
   config.plugins.push new webpack.DefinePlugin
     __MOCK__: JSON.stringify(JSON.parse(MOCK || 'false'))
+    'process.env': JSON.stringify(envConstants)
 
   if !TEST
     config.plugins.push new HtmlWebpackPlugin
