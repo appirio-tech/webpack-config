@@ -32,8 +32,10 @@ configEnvConstants = (ENV) ->
     TCO17_URL          : 'http://tco17.topcoder-dev.com'
     TCO_HOME_URL       : 'https://www.topcoder-dev.com/tco'
 
-    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
-    ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
+    #ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
+    #ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
+    ACCOUNTS_APP_URL             : 'http://local.topcoder-dev.com:3100/member'
+    ACCOUNTS_APP_CONNECTOR_URL   : 'http://local.topcoder-dev.com:8000/connector.html'
 
     FILE_PICKER_API_KEY: process.env.FILE_PICKER_API_KEY_DEV
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-dev'

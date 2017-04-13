@@ -1,4 +1,5 @@
 # Build files
+dist
 .tmp
 bower_components
 node_modules
