@@ -32,7 +32,7 @@ configEnvConstants = (ENV) ->
     TCO17_URL          : 'http://tco17.topcoder-dev.com'
     TCO_HOME_URL       : 'https://www.topcoder-dev.com/tco'
 
-    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#/member'
+    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-dev.com/#!/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-dev.com/connector.html'
 
     FILE_PICKER_API_KEY: 'AzFINuQoqTmqw0QEoaw9az'
