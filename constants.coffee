@@ -72,7 +72,7 @@ configEnvConstants = (ENV) ->
     TCO17_URL          : 'http://tco17.topcoder-qa.com'
     TCO_HOME_URL       : 'https://www.topcoder-dev.com/tco'
 
-    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#/member'
+    ACCOUNTS_APP_URL             : 'https://accounts.topcoder-qa.com/#!/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder-qa.com/connector.html'
 
     FILE_PICKER_API_KEY: 'ACrnuL2lqRAOOHLOhqwkaz'
@@ -113,7 +113,7 @@ configEnvConstants = (ENV) ->
     TCO17_URL          : 'http://tco17.topcoder.com'
     TCO_HOME_URL       : 'https://www.topcoder.com/tco'
 
-    ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#/member'
+    ACCOUNTS_APP_URL             : 'https://accounts.topcoder.com/#!/member'
     ACCOUNTS_APP_CONNECTOR_URL   : 'https://accounts.topcoder.com/connector.html'
 
     FILE_PICKER_API_KEY: 'ABqZ3MVqqSeiqL2fMOjTxz'
