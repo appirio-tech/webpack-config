@@ -40,6 +40,8 @@ configEnvConstants = (ENV) ->
 
     PREDIX_PROGRAM_ID  : 3448
     HEAP_ANALYTICS_APP_ID : '4153837120'
+    ACCOUNTS_SEGMENT_KEY: process.env.ACCOUNTS_SEGMENT_KEY_DEV
+
 
   if ENV == 'QA'
     Object.assign constants,
@@ -80,6 +82,7 @@ configEnvConstants = (ENV) ->
 
     PREDIX_PROGRAM_ID  : 3448
     HEAP_ANALYTICS_APP_ID : '4153837120'
+    ACCOUNTS_SEGMENT_KEY: ''
 
   if ENV == 'PROD'
     Object.assign constants,
@@ -121,6 +124,7 @@ configEnvConstants = (ENV) ->
 
     PREDIX_PROGRAM_ID  : 3448
     HEAP_ANALYTICS_APP_ID : '638908330'
+    ACCOUNTS_SEGMENT_KEY: process.env.ACCOUNTS_SEGMENT_KEY_PROD
 
   constants
 
