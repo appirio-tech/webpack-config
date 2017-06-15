@@ -28,11 +28,6 @@ module.exports = (options) ->
 
   envConstants = constants(ENV)
 
-  unless SILENT
-    console.log 'Assigning the following constants to process.env:'
-    console.log envConstants
-    console.log '\n'
-
   Object.assign process.env, envConstants
 
   # Reference: http://webpack.github.io/docs/configuration.html
@@ -154,6 +149,7 @@ module.exports = (options) ->
 
   config.plugins.push new webpack.DefinePlugin
     __MOCK__: JSON.stringify(JSON.parse(MOCK || 'false'))
+    'process.env': JSON.stringify(envConstants)
 
   if !TEST
     config.plugins.push new HtmlWebpackPlugin
