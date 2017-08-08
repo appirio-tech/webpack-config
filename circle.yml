@@ -1,0 +1,26 @@
+machine:
+  node:
+    version: 5.2.0
+
+dependencies:
+  pre:
+    - echo "//registry.npmjs.org/:_authToken=$NPM_API_KEY" >> ~/.npmrc
+  override:
+    - npm install
+compile:
+  override:
+    - webpack
+
+test:
+  override:
+    - npm test
+
+deployment:
+  development:
+    pre: 
+        - npm-prepublish --verbose
+    override:
+        tag: /v[0-9]+(\.[0-9]+)*/
+        owner: appirio-tech
+        commands:
+          - npm publish
