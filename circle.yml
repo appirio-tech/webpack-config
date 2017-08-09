@@ -11,10 +11,6 @@ compile:
   override:
     - webpack
 
-test:
-  override:
-    - npm test
-
 deployment:
   development:
     pre: 
