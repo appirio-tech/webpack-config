@@ -2,13 +2,16 @@ machine:
   node:
     version: 5.2.0
 
-
+dependencies:
+  override:
+    - npm install -d
+    
 compile:
   override:
     - node --version
     - npm --version
     - nvm --version
-    - npm install -d 
+    #- npm install -d 
     - npm rebuild node-sass
     - webpack --version
     - webpack
