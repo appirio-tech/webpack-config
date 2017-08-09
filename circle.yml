@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   override:
-    - npm install -d
+    - npm install -d -g
 
 compile:
   override:
