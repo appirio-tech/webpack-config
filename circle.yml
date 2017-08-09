@@ -6,7 +6,7 @@ dependencies:
   pre:
     - echo "//registry.npmjs.org/:_authToken=$NPM_API_KEY" >> ~/.npmrc
   override:
-    - npm install -ddd
+    - npm install -d
 
 compile:
   override:
