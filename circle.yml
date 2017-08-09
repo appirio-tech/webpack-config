@@ -8,7 +8,8 @@ compile:
     - node --version
     - npm --version
     - nvm --version
-    - npm install -d -g
+    - npm install -d 
+    - npm rebuild node-sass
     - webpack --version
     - webpack
 
