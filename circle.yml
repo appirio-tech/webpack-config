@@ -5,7 +5,7 @@ machine:
 
 compile:
   override:
-    - npm install -d -g
+    - npm install -d
     - webpack
 
 deployment:
