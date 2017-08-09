@@ -7,6 +7,7 @@ dependencies:
     - echo "//registry.npmjs.org/:_authToken=$NPM_API_KEY" >> ~/.npmrc
   override:
     - npm install
+
 compile:
   override:
     - webpack
