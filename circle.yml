@@ -16,7 +16,7 @@ test:
     - npm test
     
 deployment:
-  development:
+  allenv:
     pre: 
         - npm-prepublish --verbose
     override:
