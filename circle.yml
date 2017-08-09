@@ -7,8 +7,6 @@ dependencies:
     - echo "//registry.npmjs.org/:_authToken=$NPM_API_KEY" >> ~/.npmrc
   override:
     - npm install
-    - npm install webpack -g
-    - npm install lodash --save
 
 compile:
   override:
