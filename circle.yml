@@ -9,9 +9,12 @@ compile:
     - nvm --version
     - npm install -d 
     - npm rebuild node-sass
-    - webpack --version
     - webpack
 
+test:
+  override:
+    - npm test
+    
 deployment:
   development:
     pre: 
