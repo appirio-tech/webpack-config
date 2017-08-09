@@ -5,7 +5,11 @@ machine:
 
 compile:
   override:
+    - node --version
+    - npm --version
+    - nvm --version
     - npm install -d
+    - webpack --version
     - webpack
 
 deployment:
