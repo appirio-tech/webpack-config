@@ -8,6 +8,7 @@ dependencies:
   override:
     - npm install
     - npm install webpack -g
+    - npm install lodash -g
 
 compile:
   override:
