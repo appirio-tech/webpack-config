@@ -8,7 +8,6 @@ compile:
     - npm --version
     - nvm --version
     - npm install -d 
-    - npm rebuild node-sass
     - webpack
 
 test:
