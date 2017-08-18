@@ -17,10 +17,8 @@ test:
     
 deployment:
   all:
-    branch: dev-circleci
-    owner: appirio-tech
-    commands:
-       - npm version 0.0.1
-       - npm-prepublish --verbose  --lax
-       - npm publish
+    tag: /v[0-9]+(\.[0-9]+)*/
+      commands:
+         - npm-prepublish --verbose  --lax
+         - npm publish
 
