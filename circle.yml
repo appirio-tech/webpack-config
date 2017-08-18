@@ -20,6 +20,6 @@ deployment:
     branch: dev-circleci
     owner: appirio-tech
     commands:
-       - npm-prepublish --verbose
+       - npm-prepublish --verbose  --lax
        - npm publish
 
