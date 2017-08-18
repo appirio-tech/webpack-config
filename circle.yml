@@ -17,8 +17,4 @@ test:
     
 deployment:
   allenv:
-    pre: 
-        - npm-prepublish --verbose
-    override:
-        commands:
-          - npm publish
+    - npm-prepublish --verbose
