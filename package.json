@@ -1,6 +1,6 @@
 {
   "name": "test-tech-webpack-config",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "main": "./webpack.config.coffee",
   "devDependencies": {
     "angular": "^1.4.x",
