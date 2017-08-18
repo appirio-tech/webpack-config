@@ -17,6 +17,7 @@ test:
     
 deployment:
   all:
+    branch: dev-circleci
     owner: appirio-tech
     commands:
        - npm-prepublish --verbose
