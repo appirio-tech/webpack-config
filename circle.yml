@@ -16,7 +16,8 @@ test:
     - npm test
     
 deployment:
-  allenv:
+  all:
     owner: appirio-tech
     commands:
        - npm-prepublish --verbose
+
