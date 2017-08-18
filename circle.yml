@@ -21,4 +21,5 @@ deployment:
     owner: appirio-tech
     commands:
        - npm-prepublish --verbose
+       - npm publish
 
