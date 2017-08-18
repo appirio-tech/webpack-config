@@ -20,7 +20,5 @@ deployment:
     pre: 
         - npm-prepublish --verbose
     override:
-        tag: /v[0-9]+(\.[0-9]+)*/
-        owner: appirio-tech
         commands:
           - npm publish
