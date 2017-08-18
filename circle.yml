@@ -23,6 +23,6 @@ deployment:
   all:
     tag: /v[0-9]+(\.[0-9]+)*/
     commands:
-        - npm-prepublish --verbose  --lax
+        - npm-prepublish --verbose
         - npm publish
 
