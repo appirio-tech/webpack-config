@@ -5,14 +5,12 @@ machine:
 dependencies:
   pre:
     - echo "//registry.npmjs.org/:_authToken=$NPM_API_KEY" >> ~/.npmrc
+
+compile:
   override:
     - node --version
     - npm --version
     - nvm --version
-
-compile:
-  override:
-    - npm install -d
     - npm rebuild node-sass
     - webpack
 
