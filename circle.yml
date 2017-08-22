@@ -10,7 +10,7 @@ dependencies:
     - npm --version
     - nvm --version
     - npm install -d
-    
+
 compile:
   override:
     - npm rebuild node-sass
