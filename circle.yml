@@ -26,4 +26,3 @@ deployment:
     commands:
         - npm-prepublish --verbose
         - npm publish
-
