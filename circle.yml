@@ -9,8 +9,7 @@ dependencies:
     - node --version
     - npm --version
     - nvm --version
-    - npm config set strict-ssl false
-    - npm install -d --ca=null
+    - npm install -d
     
 compile:
   override:
