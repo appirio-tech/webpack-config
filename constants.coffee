@@ -38,7 +38,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: process.env.FILE_PICKER_API_KEY_DEV
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-dev'
 
-    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://c.cs18.visual.force.com/apex/ConnectLead?connectProjectId='
 
     CONNECT_SEGMENT_KEY: 'QBtLgV8vCiuRX1lDikbMjcoe9aCHkF6n'
     PREDIX_PROGRAM_ID         : 3448
@@ -82,7 +82,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: process.env.FILE_PICKER_API_KEY_QA
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-qa'
 
-    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio--dev.cs59.my.salesforce.com/apex/ConnectLead?connectProjectId='
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://c.cs18.visual.force.com/apex/ConnectLead?connectProjectId='
     CONNECT_SEGMENT_KEY: ''
     PREDIX_PROGRAM_ID         : 3448
     IBM_COGNITIVE_PROGRAM_ID  : 3449
@@ -126,7 +126,7 @@ configEnvConstants = (ENV) ->
     FILE_PICKER_API_KEY: process.env.FILE_PICKER_API_KEY_PROD
     FILE_PICKER_SUBMISSION_CONTAINER_NAME: 'submission-staging-prod'
 
-    SALESFORCE_PROJECT_LEAD_LINK: 'https://appirio.my.salesforce.com/apex/ConnectLead?connectProjectId='
+    SALESFORCE_PROJECT_LEAD_LINK: 'https://topcoder.my.salesforce.com/apex/ConnectLead?connectProjectId='
     CONNECT_SEGMENT_KEY: 'ajP6cQ5SN2EMUWoWTOLROVnAHsOlsDCn'
     PREDIX_PROGRAM_ID         : 3448
     IBM_COGNITIVE_PROGRAM_ID  : 3449
