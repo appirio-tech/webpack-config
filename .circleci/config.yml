@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  "build-dev":
+    docker:
+      - image: node:5.2.0
+    steps:
+      - run:
+          name: Installation of build dependencies.
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_API_KEY" >> ~/.npmrc			
+      - checkout
+      - run: npm rebuild node-sass
+      - run: webpack
+      - run: npm test
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build-dev:
+          filters:
+            branches:
+              only: dev-circleci2
