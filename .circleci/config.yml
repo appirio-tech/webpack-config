@@ -8,7 +8,13 @@ jobs:
           name: Installation of build dependencies.
           command: echo "//registry.npmjs.org/:_authToken=$NPM_API_KEY" >> ~/.npmrc			
       - checkout
+      - restore_cache:
+          key: wc-node-modules-{{ checksum "package.json" }}      
       - run: npm install -d
+		  - save_cache:
+          key: wc-node-modules-{{ checksum "package.json" }}
+          paths:
+            - node_modules      
       - run: npm rebuild node-sass
       - run: webpack
       - run: npm test
