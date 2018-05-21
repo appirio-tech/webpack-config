@@ -28,6 +28,7 @@
     "bourbon": "^4.2.6",
     "cjsx-loader": "^2.1.0",
     "coffeescript": "1.8.0",
+    "coffee-script": "1.x.x",
     "coffee-loader": "0.x.x",
     "compression-webpack-plugin": "^0.2.0",
     "css-loader": "^0.23.0",
