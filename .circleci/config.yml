@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  "build-dev":
+  "build-all":
     docker:
       - image: node:5.2.0
     steps:
@@ -18,12 +18,18 @@ jobs:
       - run: npm rebuild node-sass
       - run: npm run build
       - run: npm test
-
+      - run:
+          name: publishing to npm registry
+          command: |
+            npm-prepublish --verbose
+            npm publish     
 workflows:
   version: 2
   build:
     jobs:
-      - build-dev:
+      - build-all:
           filters:
             branches:
-              only: dev-circleci2
+              ignore: /.*/
+            tags:
+              only: /v[0-9]+(\.[0-9]+)*/
