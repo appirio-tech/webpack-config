@@ -16,7 +16,7 @@ jobs:
           paths:
             - node_modules      
       - run: npm rebuild node-sass
-      - run: webpack
+      - run: npm run build
       - run: npm test
 
 workflows:
