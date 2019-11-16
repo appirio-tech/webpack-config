@@ -25,7 +25,6 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-2": "^6.5.0",
     "bourbon": "^4.2.6",
-    "cjsx-loader": "^2.1.0",
     "coffee-loader": "0.x.x",
     "coffee-script": "1.x.x",
     "compression-webpack-plugin": "^0.2.0",
