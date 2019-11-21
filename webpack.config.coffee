@@ -88,7 +88,7 @@ module.exports = (options) ->
       loader: 'jade-react'
     ,
       test: /\.(coffee|litcoffee|cjsx)$/
-      loader: 'babel?presets[]=react,presets[]=es2015,presets[]=stage-2,plugins[]=lodash!coffee!cjsx'
+      loader: 'babel?presets[]=react,presets[]=es2015,presets[]=stage-2,plugins[]=lodash!coffee'
     ,
       test: /\.json$/
       loader: 'json'
