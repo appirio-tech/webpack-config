@@ -30,7 +30,7 @@
     "coffee-loader": "0.x.x",
     "coffee-script": "1.x.x",
     "compression-webpack-plugin": "^0.2.0",
-    "css-loader": "^0.23.0",
+    "css-loader": "^0.28.11",
     "envify": "^3.4.0",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
