@@ -34,7 +34,7 @@
     "envify": "^3.4.0",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
-    "html-webpack-plugin": "^2.7.2",
+    "html-webpack-plugin": "^4.0.0",
     "jade": "^1.11.0",
     "jade-html-loader": "0.0.3",
     "jade-loader": "^0.8.0",
@@ -44,7 +44,7 @@
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "transform-loader": "^0.2.3",
-    "webpack": "^1.12.9",
+    "webpack": "^3.0.0",
     "webpack-dev-server": "^1.10.1"
   }
 }
